@@ -9,10 +9,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: manitobaelection_development
+  database: mbelection
   pool: 5
-  username: root
-  password:
+  username: mbelection
+  password: gorgonzola77!
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -32,8 +32,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: manitobaelection_production
+  database: mbaelection_production
   pool: 5
-  username: root
-  password:
+  username: mbelection
+  password: gorgonzola77!
   socket: /var/run/mysqld/mysqld.sock
