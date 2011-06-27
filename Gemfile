@@ -9,6 +9,8 @@ gem 'mysql2', '~> 0.2.6'
 gem 'haml'
 gem 'sass'
 gem 'nifty-generators', :group => :development
+gem 'activeadmin'
+gem 'paperclip'
 
 # Use unicorn as the web server
 # gem 'unicorn'
