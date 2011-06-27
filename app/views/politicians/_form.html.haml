@@ -1,0 +1,68 @@
+= form_for @politician do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :incumbent
+    %br
+    = f.check_box :incumbent
+  %p
+    = f.label :website
+    %br
+    = f.text_field :website
+  %p
+    = f.label :incumbent_website
+    %br
+    = f.text_field :incumbent_website
+  %p
+    = f.label :facebook
+    %br
+    = f.text_field :facebook
+  %p
+    = f.label :twitter
+    %br
+    = f.text_field :twitter
+  %p
+    = f.label :youtube
+    %br
+    = f.text_field :youtube
+  %p
+    = f.label :office_address
+    %br
+    = f.text_field :office_address
+  %p
+    = f.label :phone_number
+    %br
+    = f.text_field :phone_number
+  %p
+    = f.label :email
+    %br
+    = f.text_field :email
+  %p
+    = f.label :image_file_name
+    %br
+    = f.text_field :image_file_name
+  %p
+    = f.label :image_content_type
+    %br
+    = f.text_field :image_content_type
+  %p
+    = f.label :image_file_size
+    %br
+    = f.text_field :image_file_size
+  %p
+    = f.label :image_updated_at
+    %br
+    = f.datetime_select :image_updated_at
+  %p
+    = f.label :constituency_id
+    %br
+    = f.text_field :constituency_id
+  %p
+    = f.label :party_id
+    %br
+    = f.text_field :party_id
+  %p
+    = f.submit

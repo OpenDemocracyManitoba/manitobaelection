@@ -1,0 +1,32 @@
+= form_for @party do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :hex_colour
+    %br
+    = f.text_field :hex_colour
+  %p
+    = f.label :image_file_name
+    %br
+    = f.text_field :image_file_name
+  %p
+    = f.label :image_content_type
+    %br
+    = f.text_field :image_content_type
+  %p
+    = f.label :image_file_size
+    %br
+    = f.text_field :image_file_size
+  %p
+    = f.label :image_updated_at
+    %br
+    = f.datetime_select :image_updated_at
+  %p
+    = f.label :website
+    %br
+    = f.text_field :website
+  %p
+    = f.submit

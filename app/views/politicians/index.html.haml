@@ -1,0 +1,43 @@
+- title "Politicians"
+
+%table
+  %tr
+    %th Name
+    %th Incumbent
+    %th Website
+    %th Incumbent website
+    %th Facebook
+    %th Twitter
+    %th Youtube
+    %th Office address
+    %th Phone number
+    %th Email
+    %th Image file name
+    %th Image content type
+    %th Image file size
+    %th Image updated at
+    %th Constituency
+    %th Party
+  - for politician in @politicians
+    %tr
+      %td= politician.name
+      %td= politician.incumbent
+      %td= politician.website
+      %td= politician.incumbent_website
+      %td= politician.facebook
+      %td= politician.twitter
+      %td= politician.youtube
+      %td= politician.office_address
+      %td= politician.phone_number
+      %td= politician.email
+      %td= politician.image_file_name
+      %td= politician.image_content_type
+      %td= politician.image_file_size
+      %td= politician.image_updated_at
+      %td= politician.constituency_id
+      %td= politician.party_id
+      %td= link_to 'Show', politician
+      %td= link_to 'Edit', edit_politician_path(politician)
+      %td= link_to 'Destroy', politician, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Politician", new_politician_path

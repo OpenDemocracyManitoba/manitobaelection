@@ -1,4 +1,10 @@
 Manitobaelection::Application.routes.draw do
+  resources :parties
+
+  resources :constituencies
+
+  resources :politicians
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

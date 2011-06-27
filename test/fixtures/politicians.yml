@@ -1,0 +1,33 @@
+one:
+  name: MyString
+  incumbent: false
+  website: MyString
+  incumbent_website: MyString
+  facebook: MyString
+  twitter: MyString
+  youtube: MyString
+  office_address: MyString
+  phone_number: MyString
+  email: MyString
+  image_file_name: MyString
+  image_content_type: MyString
+  image_file_size: 1
+  image_updated_at: 2011-06-27 20:12:34
+  constituency_id: 1
+
+two:
+  name: MyString
+  incumbent: false
+  website: MyString
+  incumbent_website: MyString
+  facebook: MyString
+  twitter: MyString
+  youtube: MyString
+  office_address: MyString
+  phone_number: MyString
+  email: MyString
+  image_file_name: MyString
+  image_content_type: MyString
+  image_file_size: 1
+  image_updated_at: 2011-06-27 20:12:34
+  constituency_id: 1

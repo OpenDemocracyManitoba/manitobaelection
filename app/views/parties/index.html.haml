@@ -1,0 +1,25 @@
+- title "Parties"
+
+%table
+  %tr
+    %th Name
+    %th Hex colour
+    %th Image file name
+    %th Image content type
+    %th Image file size
+    %th Image updated at
+    %th Website
+  - for party in @parties
+    %tr
+      %td= party.name
+      %td= party.hex_colour
+      %td= party.image_file_name
+      %td= party.image_content_type
+      %td= party.image_file_size
+      %td= party.image_updated_at
+      %td= party.website
+      %td= link_to 'Show', party
+      %td= link_to 'Edit', edit_party_path(party)
+      %td= link_to 'Destroy', party, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Party", new_party_path
