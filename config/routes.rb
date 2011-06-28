@@ -3,11 +3,11 @@ Manitobaelection::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :parties
+  resources :parties, :only => [:index,:show]
 
-  resources :constituencies
+  resources :constituencies, :only => [:index,:show]
 
-  resources :politicians
+  resources :politicians, :only => [:index,:show]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
