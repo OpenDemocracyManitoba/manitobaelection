@@ -27,14 +27,16 @@ ActiveAdmin.register Politician do
 
   index do
     column :id
-    column 'Name' do |politician|
+    column 'Name', :sortable => :name do |politician|
       link_to politician.name, admin_politician_path(politician)
     end
     column 'Picture' do |politician|
-      image_tag politician.image.url(:thumb)
+      image_tag politician.image.url(:thumb)  unless politician.image_file_name.blank?
     end
     column :incumbent
-    column :website
+    column 'Website' do |politician|
+      link_to 'website', politician.website  unless politician.website.blank?
+    end
     column :incumbent_website
     column :facebook
     column :twitter
