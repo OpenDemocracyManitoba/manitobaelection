@@ -9,7 +9,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: mbelection
+  database: mbelection_development
   pool: 5
   username: mbelection
   password: gorgonzola77!
@@ -24,8 +24,8 @@ test:
   reconnect: false
   database: manitobaelection_test
   pool: 5
-  username: root
-  password:
+  username: mbelection
+  password: gorgonzola77!
   socket: /var/run/mysqld/mysqld.sock
 
 production:

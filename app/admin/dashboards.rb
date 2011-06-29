@@ -1,5 +1,59 @@
 ActiveAdmin::Dashboards.build do
 
+  section "At a Glance", :priority => 1 do
+    div do 
+      render 'at_a_glance', { :politician_count => Politician.count, 
+                              :constituency_count => Constituency.count }
+    end
+  end
+
+  section "Recently Added Politicans", :priority => 2 do
+    ul do
+      Politician.limit(5).order("created_at DESC").each do |politician|
+        li link_to(politician.name, admin_politician_path(politician))
+      end
+    end
+  end
+
+  section "Recently Updated Politicans", :priority => 2  do
+    ul do
+      Politician.limit(5).order("updated_at DESC").each do |politician|
+        li link_to(politician.name, admin_politician_path(politician))
+      end
+    end
+  end
+ 
+  section "New Comments", :priority => 3 do
+    ul do
+      ActiveAdmin::Comment.limit(5).order("created_at DESC").each do |comment|
+        li render('comment_snip', {:comment => comment})
+      end
+    end
+  end
+
+  section "Recently Added Constituencies", :priority => 3  do
+    ul do
+      Constituency.limit(5).order("created_at DESC").each do |politician|
+        li link_to(politician.name, admin_politician_path(politician))
+      end
+    end
+  end
+
+  section "Recently Updated Constituencies", :priority => 3  do
+    ul do
+      Constituency.limit(5).order("updated_at DESC").each do |politician|
+        li link_to(politician.name, admin_politician_path(politician))
+      end
+    end
+  end
+
+  section "Analytics", :priority => 4 do
+    div do
+      render 'analytics'
+    end
+  end
+
+
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.

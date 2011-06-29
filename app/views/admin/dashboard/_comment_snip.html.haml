@@ -1,0 +1,3 @@
+#{link_to comment.resource.name, '/admin/' + comment.resource_type.downcase.pluralize + '/' + comment.resource.id.to_s}
+%em "#{truncate(comment.body)}"  
+by #{truncate(comment.author.email)} 
