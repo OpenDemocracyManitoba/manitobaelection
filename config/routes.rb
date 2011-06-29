@@ -1,5 +1,16 @@
 Manitobaelection::Application.routes.draw do
   ActiveAdmin.routes(self)
+  post '/admin/parties/:id' => 'admin/parties#update'
+  get '/admin/parties/:id'   => 'admin/parties#show'
+  put '/admin/parties' => 'admin/parties#create'
+
+  post '/admin/politicians/:id' => 'admin/politicians#update'
+  get '/admin/politicians/:id'   => 'admin/politicians#show'
+  put '/admin/politicians' => 'admin/politicians#create'
+
+  post '/admin/constituencies/:id' => 'admin/constituencies#update'
+  get '/admin/constituencies/:id'   => 'admin/constituencies#show'
+  put '/admin/constituencies' => 'admin/constituencies#create'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 

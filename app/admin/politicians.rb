@@ -4,6 +4,7 @@ ActiveAdmin.register Politician do
     f.inputs "Details", :multipart => true do
       f.input :name
       f.input :constituency
+      f.input :incumbent
       f.input :party
       f.input :image
     end

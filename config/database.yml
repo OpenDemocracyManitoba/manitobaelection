@@ -32,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: mbaelection_production
+  database: mbelection_production
   pool: 5
   username: mbelection
   password: gorgonzola77!

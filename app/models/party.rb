@@ -1,6 +1,6 @@
 class Party < ActiveRecord::Base
   has_many :politicians
-  attr_accessible :name, :hex_colour, :image, :image_file_name
+  attr_accessible :name, :hex_colour, :website, :image, :image_file_name
 
   validates_presence_of :name
 
