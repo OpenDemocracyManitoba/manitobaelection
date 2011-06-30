@@ -66,4 +66,12 @@ ActiveAdmin.register Politician do
     column :constituency
   end
 
+  sidebar :create_resources, :only => :show do 
+    ul do
+      li link_to('New Politician', new_admin_politician_path)
+      li link_to('New Constituency', new_admin_constituency_path)
+      li link_to('New Party', new_admin_party_path)
+    end
+  end
+
 end

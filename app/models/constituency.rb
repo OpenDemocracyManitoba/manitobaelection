@@ -4,7 +4,7 @@ class Constituency < ActiveRecord::Base
 
   validates_presence_of :name
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :small => "200x200>", :thumb => "100x100>" },
+  has_attached_file :image, :styles => { :large => "500x500>", :medium => "300x300>", :small => "200x200>", :thumb => "100x100>" },
                     :url  => "/uploads/constituency_image/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/uploads/constituency_image/:id/:style/:basename.:extension"
 end

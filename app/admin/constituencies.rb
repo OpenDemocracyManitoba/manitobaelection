@@ -19,6 +19,13 @@ ActiveAdmin.register Constituency do
       image_tag constituency.image.url(:thumb)  unless constituency.image_file_name.blank?
     end 
   end
- 
+
+  sidebar :create_resources, :only => :show do 
+    ul do
+      li link_to('New Constituency', new_admin_constituency_path)
+      li link_to('New Politician', new_admin_politician_path)
+      li link_to('New Party', new_admin_party_path)
+    end
+  end
  
 end

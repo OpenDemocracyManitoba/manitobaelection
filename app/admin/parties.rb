@@ -27,5 +27,13 @@ ActiveAdmin.register Party do
       link_to 'website', party.website  unless party.website.blank?
     end
   end
+
+  sidebar :create_resources, :only => :show do 
+    ul do
+      li link_to('New Party', new_admin_party_path)
+      li link_to('New Politician', new_admin_politician_path)
+      li link_to('New Constituency', new_admin_constituency_path)
+    end
+  end
  
 end
