@@ -4,7 +4,7 @@ ActiveAdmin.register Politician do
     f.inputs "Details", :multipart => true do
       f.input :name
       f.input :constituency
-      f.input :incumbent
+      f.input :incumbent_since
       f.input :party
       f.input :image
     end
@@ -36,6 +36,7 @@ ActiveAdmin.register Politician do
       image_tag politician.image.url(:thumb)  unless politician.image_file_name.blank?
     end
     column :incumbent
+    column :incumbency_year
     column 'Online' do |politician|
       div do
         div do
