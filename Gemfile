@@ -11,6 +11,7 @@ gem 'sass'
 gem 'nifty-generators', :group => :development
 gem 'activeadmin'
 gem 'paperclip'
+gem 'rails-backup-migrate'
 
 # Use unicorn as the web server
 # gem 'unicorn'
