@@ -4,6 +4,7 @@ ActiveAdmin.register Constituency do
     f.inputs "Details", :multipart => true do
       f.input :name
       f.input :image
+      f.input :pdf_map_url
     end
 
     f.buttons  
