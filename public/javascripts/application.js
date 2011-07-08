@@ -21,13 +21,5 @@
 $(document).ready(function(){
     $('div.politicians').shuffle();
 
-    // Active Admin Tweaks
-    p = $('.pagination');
-
-    if (p) {
-        target = $('.pagination_information')[0];
-        $(p[0]).clone().appendTo(target);
-        console.log('what!');
-    }
 
 });
