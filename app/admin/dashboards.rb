@@ -33,16 +33,16 @@ ActiveAdmin::Dashboards.build do
 
   section "Recently Added Constituencies", :priority => 3  do
     ul do
-      Constituency.limit(5).order("created_at DESC").each do |politician|
-        li link_to(politician.name, admin_politician_path(politician))
+      Constituency.limit(5).order("created_at DESC").each do |constituency|
+        li link_to(constituency.name, admin_constituency_path(constituency))
       end
     end
   end
 
   section "Recently Updated Constituencies", :priority => 3  do
     ul do
-      Constituency.limit(5).order("updated_at DESC").each do |politician|
-        li link_to(politician.name, admin_politician_path(politician))
+      Constituency.limit(5).order("updated_at DESC").each do |constituency|
+        li link_to(constituency.name, admin_constituency_path(constituency))
       end
     end
   end

@@ -1,4 +1,5 @@
 class Politician < ActiveRecord::Base
+
   belongs_to :party
   belongs_to :constituency
   attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id
@@ -22,14 +23,12 @@ class Politician < ActiveRecord::Base
 
   # Instance Methods
 
-  #Friendly URLs
-
-  def to_param
-    "#{id}/#{slug}"
-  end
-
   def slug
     name.parameterize
+  end
+
+  def friendly_path
+    Rails.application.routes.url_helpers.candidate_path(:id => self.id, :slug => self.slug)
   end
 
   # Virtual Attributes

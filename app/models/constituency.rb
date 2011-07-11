@@ -1,4 +1,5 @@
 class Constituency < ActiveRecord::Base
+  
   REGIONS = ["Winnipeg", "Brandon", "Northern Manitoba", "Southern Manitoba"]
   has_many :politicians
   attr_accessible :name, :image, :image_file_name, :pdf_map_url, :region
@@ -17,14 +18,12 @@ class Constituency < ActiveRecord::Base
 
   # Instance Methods
 
-  #Friendly URLs
-
-  def to_param
-    "#{id}/#{slug}"
-  end
-
   def slug
-    name.parameterize
+    self.name.parameterize
   end
-  
+
+  def friendly_path
+    Rails.application.routes.url_helpers.constituency_path(:id => self.id, :slug => self.slug)
+  end
+
 end
