@@ -10,4 +10,21 @@ class Constituency < ActiveRecord::Base
   has_attached_file :image, :styles => { :large => "500x500>", :medium => "300x300>", :small => "200x200>", :thumb => "100x100>" },
                     :url  => "/uploads/constituency_image/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/uploads/constituency_image/:id/:style/:basename.:extension"
+
+  # Scopes and Class Methods
+  
+  scope :with_politicians, includes(:politicians)
+
+  # Instance Methods
+
+  #Friendly URLs
+
+  def to_param
+    "#{id}/#{slug}"
+  end
+
+  def slug
+    name.parameterize
+  end
+  
 end

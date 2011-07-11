@@ -11,6 +11,29 @@ class Politician < ActiveRecord::Base
                     :url  => "/uploads/politician_image/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/uploads/politician_image/:id/:style/:basename.:extension"
 
+  # Scopes and Class Methods
+ 
+  scope :with_constituency, includes(:constituency)
+  scope :with_party, includes(:party)
+
+  def self.by_name(name)
+    where(:name => name).first
+  end
+
+  # Instance Methods
+
+  #Friendly URLs
+
+  def to_param
+    "#{id}/#{slug}"
+  end
+
+  def slug
+    name.parameterize
+  end
+
+  # Virtual Attributes
+
   def incumbent_since=(year)
     if year.to_i > 0 || year.blank?
       self.incumbency_year = year
@@ -21,5 +44,7 @@ class Politician < ActiveRecord::Base
   def incumbent_since
     self.incumbency_year
   end
+
+
 
 end
