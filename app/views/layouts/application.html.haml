@@ -22,7 +22,7 @@
     #container
       %header
         %h1
-          Manitoba Election 2011
+          = link_to 'Manitoba Election 2011', '/'
         %h3
           A Citizen Created Election Resource
 
@@ -30,8 +30,12 @@
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"
 
-        - if show_title?
-          %h2= yield(:title)
+        - if show_breadcrumbs?
+          %p.breadcrumbs
+            = link_to 'home', '/'
+            > 
+            = yield(:current_crumb)
+      
 
         = yield
 

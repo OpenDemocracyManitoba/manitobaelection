@@ -12,6 +12,15 @@ module LayoutHelper
     @show_title
   end
 
+  def breadcrumb(crumb, url)
+    content_for(:current_crumb) { link_to crumb.to_s, url }
+    @show_breadcrumbs = true
+  end
+
+  def show_breadcrumbs?
+    @show_breadcrumbs
+  end
+
   def stylesheet(*args)
     content_for(:head) { stylesheet_link_tag(*args) }
   end
