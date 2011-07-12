@@ -1,0 +1,67 @@
+- hide_incumbent_link ||= false
+- hide_politician_link ||= false
+- show_incumbent_website ||= false
+- show_constituency ||= false
+
+.politician{ :class => show_constituency ? 'show_constituency' : '' }
+  -if show_constituency
+    %div.constituency
+      - if defined?(politician.constituency)
+        = link_to politician.constituency.name, '#'
+        - if politician.incumbent
+          %p.since
+            Incumbent since #{politician.incumbency_year}
+  .image
+    - if politician.image?
+      = image_tag(politician.image(:thumb))
+    - else
+      = image_tag('/images/missing_candidate.jpg', :width => 100)
+  %p.name
+    %strong
+      - if hide_politician_link
+        = politician.name
+      - else
+        = link_to politician.name, politician.friendly_path
+    - if politician.incumbent && !hide_incumbent_link
+      %span.incumbent_link= link_to 'incumbent', '#', :title => "since #{politician.incumbency_year}"
+  - if show_incumbent_website && politician.incumbent_website?
+    %p.election_website
+      - if politician.website?
+        = link_to 'Election', politician.website
+        &
+        = link_to 'MLA', politician.incumbent_site
+        Websites
+      - else
+        = link_to 'MLA Website', politician.incumbent_site
+  - else
+    %p.election_website
+      - if politician.website?
+        = link_to 'Election Website', politician.website
+      - else
+        %span.grey Election Website
+  %p.icons
+    - if politician.email?
+      = link_to image_tag('/images/mail_active.jpg'), "mailto:#{politician.email}"
+    - else
+      = image_tag '/images/mail_inactive.jpg'
+
+    - if politician.facebook?
+      = link_to image_tag('/images/facebook_active.jpg'), politician.facebook
+    - else
+      = image_tag '/images/facebook_inactive.jpg'
+
+    - if politician.twitter?
+      = link_to image_tag('/images/twitter_active.jpg'), politician.twitter
+    - else
+      = image_tag '/images/twitter_inactive.jpg'
+
+    - if politician.youtube?
+      = link_to image_tag('/images/youtube_active.jpg'), politician.youtube
+    - else
+      = image_tag '/images/youtube_inactive.jpg'
+    = image_tag '/images/rss_inactive.jpg'
+
+  - if politician.phone_number?
+    %p.phone
+      Phone:
+      #{politician.phone_number}

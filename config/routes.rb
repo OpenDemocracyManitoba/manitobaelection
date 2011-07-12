@@ -21,8 +21,11 @@ Manitobaelection::Application.routes.draw do
   get 'constituencies/:id/:slug' => 'constituencies#show', :as => 'constituency', :constraints => { :id => /[0-9]+/ } 
 
 # resources :politicians, :only => [:index,:show] 
-  get 'candidates'     => 'politicians#index', :as => 'candidates' 
+  get 'candidates' => 'politicians#index', :as => 'candidates' 
   get 'candidates/:id/:slug' => 'politicians#show',  :as => 'candidate', :constraints => { :id => /[0-9]+/ }
+  
+  root :to => "info#index"
+  get 'info/regions' => 'info#regions'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -70,11 +73,6 @@ Manitobaelection::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  root :to => "politicians#index"
-
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

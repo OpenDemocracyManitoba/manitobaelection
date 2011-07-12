@@ -1,6 +1,6 @@
 class Constituency < ActiveRecord::Base
   
-  REGIONS = ["Winnipeg", "Brandon", "Northern Manitoba", "Southern Manitoba"]
+  REGIONS = ["Winnipeg", "Brandon", "Southern Manitoba", "Northern Manitoba"]
   has_many :politicians
   attr_accessible :name, :image, :image_file_name, :pdf_map_url, :region
 
@@ -15,6 +15,10 @@ class Constituency < ActiveRecord::Base
   # Scopes and Class Methods
   
   scope :with_politicians, includes(:politicians)
+
+  def self.all_by_region
+    order(:name).group_by(&:region)
+  end
 
   # Instance Methods
 

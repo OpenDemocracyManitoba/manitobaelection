@@ -1,6 +1,7 @@
 class ConstituenciesController < ApplicationController
   def index
-    @constituencies = Constituency.all
+    @constituencies_by_region = Constituency.all_by_region
+    @regions = Constituency::REGIONS
   end
 
   def show

@@ -1,21 +1,55 @@
 !!!
-%html
+%html{:class => 'no-js'}
 
   %head
     %title
-      = yield(:title) || "Untitled"
+      = "Manitoba Election 2011 " + yield(:title) || "Manitoba Election 2011"
+
+    %meta{:charset => 'utf-8'}/
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    %meta{'http-equiv' => 'cleartype', :content => 'on'}/
+    %meta{:name => 'HandheldFriendly', :content => 'True'}/
+    %meta{:name => 'MobileOptimized', :content => '320'}/
+    %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0'}/
+
     = stylesheet_link_tag "application"
-    = javascript_include_tag :defaults
+    = javascript_include_tag 'modernizr-2.0.6.js'
+
     = csrf_meta_tag
     = yield(:head)
 
   %body
     #container
-      - flash.each do |name, msg|
-        = content_tag :div, msg, :id => "flash_#{name}"
+      %header
+        %h1
+          Manitoba Election 2011
+        %h3
+          A Citizen Created Election Resource
 
-      - if show_title?
-        %h1= yield(:title)
+      %div#main{:role => 'main'}
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
 
-      = yield
+        - if show_title?
+          %h2= yield(:title)
+
+        = yield
+
+      %footer
+
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js'
+    %script
+      window.jQuery || document.write("\x3Cscript src='/javascripts/jquery-1.6.2.min.js'>\x3C/script>")
+    = javascript_include_tag 'application'
+    = yield(:bottom_scripts)
+
+    <script type="text/javascript"> 
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-23791334-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>

@@ -1,0 +1,48 @@
+- content_for :bottom_scripts do
+  <script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script> 
+  <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+
+%div.flow_it
+  %div.one_column
+    %h2 Election Countdown
+    %p
+      On Tuesday October 4 of 2011 the people of Manitoba go to the polls to elect their next Legislative Assembly and Premier. 
+    %p
+      %strong
+        - if @days_until_election == 0
+          The election is today!
+        - elsif @days_until_election > 0
+          There #{prefixed_pluralize(@days_until_election,'is','are','day')} until the election.
+        - else
+          The election has already occured.
+    %br
+    %h2 About This Site
+    %p 
+      ManitobaElection.ca is a citizen created resource for the 2011 Manitoba Provincial Election.
+    %p
+      Our site was created in the spirit of openness, community, accountability and communication. In the fall of 2010 we created a similar website for the 
+      = link_to 'Winnipeg election.', 'http://winnipegelection.ca'
+    %br
+    %h2 Coming Soon
+    %ul
+      %li Interactive Constituency Maps
+      %li Historical Election Results
+      %li Election Candidate News
+      %li Calendar of Election Events
+      %li Much more...
+      
+  %div.one_column
+    %h2 Find Your Constituency
+    %p
+      %strong I live in...
+    %ul
+      - @regions.each do |region|
+        %li= link_to region, '/constituencies#' + region.parameterize
+
+  %div.one_column.social
+    <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FManitoba-Election%2F192842560733393&amp;width=275&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;height=255" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:275px; height:255px;" allowTransparency="true"></iframe>
+    %p
+      <a href="http://twitter.com/MBElection" class="twitter-follow-button">Follow @MBElection</a> 
+    %p
+      <g:plusone></g:plusone>
+
