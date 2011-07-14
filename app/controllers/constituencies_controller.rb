@@ -5,6 +5,6 @@ class ConstituenciesController < ApplicationController
   end
 
   def show
-    @constituency = Constituency.find(params[:id])
+    @constituency = Constituency.with_politicians.find(params[:id])
   end
 end

@@ -1,0 +1,13 @@
+- smaller_header ||= false
+
+- if smaller_header
+  %h3= constituency.name
+- else 
+  %h2= constituency.name
+
+%p
+  There are #{constituency.politicians.size} candidate nominees in this ward. 
+  %em.small.grey (Candidates are displayed in random order.)
+
+%div.politicians.flow_it
+  = render :partial => 'politicians/politician', :collection => constituency.politicians

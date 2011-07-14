@@ -1,20 +1,5 @@
-- title "Constituency"
+- title @constituency.name, false
+- breadcrumb('constituencies', constituencies_path)
+- breadcrumb(@constituency.name.downcase, request.fullpath)
 
-%p
-  %strong Name:
-  = @constituency.name
-%p
-  %strong Image File Name:
-  = @constituency.image_file_name
-%p
-  %strong Image Content Type:
-  = @constituency.image_content_type
-%p
-  %strong Image File Size:
-  = @constituency.image_file_size
-%p
-  %strong Image Updated At:
-  = @constituency.image_updated_at
-
-%p
-  = link_to "View All", constituencies_path
+= render :partial => @constituency

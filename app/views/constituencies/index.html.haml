@@ -1,10 +1,10 @@
-- title "Select Your Constituency"
+- title "Select Your Constituency", false
 - breadcrumb('constituencies', request.request_uri)
 
 %div.flow_it
   %div.three_columns
     %h2 Select Your Constituency Within Your Region
-    %ul
+    %ul.visible_block_when_mobile
       - @regions.each do |region|
         %li= link_to region, '#'+region.parameterize
   %div.one_column
@@ -20,3 +20,9 @@
       %ul
         - @constituencies_by_region[region].each do |constituency| 
           %li= link_to constituency.name, constituency.friendly_path
+  %div.one_column
+    %h3
+      Coming Soon
+    %ul
+      %li Interactive Maps
+      %li Historical Election Results Maps

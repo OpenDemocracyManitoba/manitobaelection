@@ -13,7 +13,7 @@
             Incumbent since #{politician.incumbency_year}
   .image
     - if politician.image?
-      = image_tag(politician.image(:thumb))
+      = image_tag(politician.image(:thumb), :style => "border-bottom: 6px solid #{politician.party.hex_colour};" )
     - else
       = image_tag('/images/missing_candidate.jpg', :width => 100)
   %p.name
@@ -23,16 +23,16 @@
       - else
         = link_to politician.name, politician.friendly_path
     - if politician.incumbent && !hide_incumbent_link
-      %span.incumbent_link= link_to 'incumbent', '#', :title => "since #{politician.incumbency_year}"
+      %span.incumbent_link= link_to 'incumbent', incumbents_path, :title => "since #{politician.incumbency_year}"
   - if show_incumbent_website && politician.incumbent_website?
     %p.election_website
       - if politician.website?
         = link_to 'Election', politician.website
         &
-        = link_to 'MLA', politician.incumbent_site
+        = link_to 'MLA', politician.incumbent_website
         Websites
       - else
-        = link_to 'MLA Website', politician.incumbent_site
+        = link_to 'MLA Website', politician.incumbent_website
   - else
     %p.election_website
       - if politician.website?
@@ -60,6 +60,9 @@
     - else
       = image_tag '/images/youtube_inactive.jpg'
     = image_tag '/images/rss_inactive.jpg'
+
+  %p.party
+    Political Party: #{ link_to politician.party.name, politician.party.website }
 
   - if politician.phone_number?
     %p.phone

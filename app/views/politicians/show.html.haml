@@ -1,4 +1,13 @@
 - title "#{@politician.name}"
+- breadcrumb('constituencies', constituencies_path)
+- breadcrumb(@politician.constituency.name.downcase, @politician.constituency.friendly_path)
+- breadcrumb(@politician.name.downcase, request.fullpath)
 
-%div.politicians
-  = render :partial => @politician, :locals => { :hide_politician_link => true }
+%div.flow_it
+  %div.politicians
+    = render :partial => @politician, :locals => { :hide_politician_link => true, :show_constituency => true, :show_incumbent_website => true }
+  %div.one_column
+    %h3 Coming Soon
+    %ul
+      %li Candidate Related News Stories
+      %li Candidate Questionaires

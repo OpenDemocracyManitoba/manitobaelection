@@ -6,6 +6,11 @@ module LayoutHelper
   def title(page_title, show_title = true)
     content_for(:title) { h(page_title.to_s) }
     @show_title = show_title
+    @title_set = true
+  end
+
+  def title_set?
+    defined?(@title_set)
   end
 
   def show_title?
@@ -13,7 +18,7 @@ module LayoutHelper
   end
 
   def breadcrumb(crumb, url)
-    content_for(:current_crumb) { link_to crumb.to_s, url }
+    content_for(:current_crumbs) { h(" > ") + link_to(crumb.to_s, url) }
     @show_breadcrumbs = true
   end
 

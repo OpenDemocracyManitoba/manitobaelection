@@ -16,6 +16,7 @@ class Politician < ActiveRecord::Base
  
   scope :with_constituency, includes(:constituency)
   scope :with_party, includes(:party)
+  scope :incumbents, where(:incumbent => true)
 
   def self.by_name(name)
     where(:name => name).first

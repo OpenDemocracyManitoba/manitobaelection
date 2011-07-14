@@ -1,6 +1,9 @@
 $link_color: #3B59BB
 $line_height: 1.3
 
+.ndp
+  background-color: lighten(#F68220,36) !important
+
 @mixin drop-shadow($ho, $vo, $b, $a)
   -o-box-shadow:      $ho $vo $b rgba(0, 0, 0, $a)
   -icab-box-shadow:   $ho $vo $b rgba(0, 0, 0, $a)
@@ -41,7 +44,7 @@ time, mark, audio, video
   vertical-align: baseline
 
 h1, h2, h3, h4, h5, h6,
-  margin: 0 0 0.5em 0
+  margin: 0 0 0.5em 10px
   padding: 0
   border: 0
   vertical-align: baseline
@@ -65,6 +68,10 @@ a
   text-decoration: none
   img
     border: none
+
+p
+  margin-bottom: 1em
+  margin-left: 10px
 
 a:hover
   text-decoration: underline
@@ -93,13 +100,15 @@ header
 
 #main
   h2.title
-    padding-left: 10px
-    color: #444
+    margin-top: 10px
 
 .flow_it
   width: 100%
   overflow: hidden
   zoom: 1
+
+.non_column
+  margin-left: 10px
 
 .one_column, .two_columns, .three_columns
   @include drop-shadow(0, 2px, 5px, 0.2)
@@ -111,13 +120,16 @@ header
   color: #333
   p
     margin-bottom: 1em
-    line-height: $line_height
-  h2, h3
-    margin-bottom: 1em
+    margin-left: 0
+
+.non_column, .one_column, .two_columns, .three_columns
+  line-height: $line_height
   ul
     margin-left: 15px
     margin-bottom: 1em
-    line-height: $line_height
+  h1, h2, h3, h4
+    margin-bottom: 1em
+    margin-left: 0
   
 .three_columns
   width: 918px
@@ -128,7 +140,7 @@ header
 .one_column
   width: 278px
 
-.politicians 
+.politicians, .incumbents
   margin-top: 1em 
   .politician
     @include drop-shadow(0, 2px, 5px, 0.2)
@@ -139,21 +151,42 @@ header
     padding-left: 10px
     background-color: #eee
     float: left
+    p
+      margin-left: 0
     .name
       margin: 1em 0
       .incumbent_link
         a
           font-style: italic
           font-size: 0.75em
-    .election_website, .phone
+    .election_website
       font-size: 0.85em
       margin-bottom: 1em
+    .phone, .party
+      font-size: 0.75em
     .image
       float: right
     .icons
       margin-bottom: 10px
       a img
         border-bottom: 2px solid $link_color
+
+.incumbents, .politicians
+  .show_constituency
+    min-height: 190px
+    .image
+      margin-top: -20px
+    .constituency
+      margin-top: 10px
+      a
+        font-weight: bold
+        font-size: 1.2em
+      .since
+        font-size: 0.75em
+        margin-top: 0
+      a, .since
+        color: #777
+  
 
 .social
   p
@@ -165,6 +198,15 @@ header
   font-size: 0.9em
   a
     color: lighten($link_color, 13)
+
+.visible_block_when_mobile
+  display: none
+
+.grey
+  color: #777
+
+.small
+  font-size: 0.8em
 
 @media all and (max-width: 959px) 
   header
@@ -192,3 +234,7 @@ header
     width: 320px
   .three_columns, .two_columns
     width: 278px
+  .visible_block_when_mobile
+    display: block
+  .hidden_block_when_mobile
+    display: none

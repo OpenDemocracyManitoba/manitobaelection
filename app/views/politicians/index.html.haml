@@ -1,16 +1,29 @@
-%h2.title
-  Candidates
-
-%div.politicians.flow_it
-  = render :partial => 'politician', :collection => @politicians
+- title 'Candidates Nominees in All Constituencies'
+- breadcrumb('constituencies', request.fullpath)
 
 %div.flow_it
-  %div.three_columns
-    %h2 Three Column Fluid
-    %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc venenatis auctor orci, id adipiscing nibh blandit vel. Sed iaculis, enim at varius cursus, quam mauris dictum elit, ac fringilla ipsum sapien ac nisi. Aenean porttitor suscipit velit. Etiam ultricies mauris nec lectus consequat nec placerat odio aliquet. Ut ac ipsum elit. Vestibulum sed sem non quam rutrum consequat. Morbi vel diam orci. Phasellus ut placerat justo. Phasellus viverra ante gravida turpis blandit id tempor velit posuere. Fusce eros magna, accumsan ut consectetur a, lobortis ac sem. Praesent id eros ac orci molestie tincidunt eget vel felis. Vestibulum quis turpis eu lorem posuere vehicula. Nullam tempor elementum metus a consectetur. Vivamus nec nibh nec sapien ultrices adipiscing id sodales eros. Fusce ultrices ligula vitae dolor imperdiet ac mattis sapien tincidunt. Etiam facilisis, massa quis rutrum pulvinar, quam libero iaculis diam, non dictum lacus tortor ut eros. Donec varius sem augue. Proin ornare congue nisl sed tristique. Mauris vitae ligula sapien, auctor pellentesque est. Nulla non est enim.
-  %div.two_columns
-    %h2 Two Column Fluid
-    %p Curabitur quam elit, eleifend eu ornare eget, ullamcorper id urna. Duis ac ante erat, eu congue quam. Vivamus ullamcorper velit et quam suscipit vel placerat urna porttitor. Donec vel sem bibendum turpis lobortis convallis. In id ligula neque. Suspendisse pulvinar tincidunt mollis. Nunc iaculis fermentum tellus ut consequat. Morbi mollis orci in purus tincidunt tristique. In hac habitasse platea dictumst. Donec fermentum lobortis porta. Proin quis nulla massa. Phasellus blandit laoreet sagittis. Nullam pellentesque lorem sit amet tellus venenatis consectetur. Aenean congue arcu eget velit feugiat vel ultricies odio sagittis. Phasellus convallis tincidunt dui, at vehicula quam commodo interdum. Sed ac odio orci. Proin nec ultrices turpis. Curabitur turpis dui, convallis faucibus laoreet nec, aliquam sit amet felis. Morbi nec tortor libero, aliquet tempor erat.
   %div.one_column
-    %h2 One Column
-    %p Nulla gravida imperdiet magna, sed facilisis justo placerat at. Aenean in urna ac lacus feugiat commodo at vitae metus. Nam semper turpis consequat tortor ultrices consectetur. Nulla facilisi. Maecenas ac elit mauris, in posuere augue. Praesent et leo at sem hendrerit convallis. Aliquam id magna libero, quis convallis erat. 
+    %h3= @regions[0] + ' Constituencies'
+    %ul
+      - @constituencies_by_region[@regions[0]].each do |constituency| 
+        %li
+          = link_to constituency.name, '#'+constituency.name.parameterize
+          %span.grey.small
+            = pluralize(constituency.politicians.size, 'candidate')
+  %div.one_column
+    - @regions[1..3].each do |region|
+      %h3= region + ' Constituencies'
+      %ul
+        - @constituencies_by_region[region].each do |constituency| 
+          %li
+            = link_to constituency.name, '#'+constituency.name.parameterize
+            %span.grey.small
+              = pluralize(constituency.politicians.size, 'candidate')
+
+- @regions.each do |region|
+  %h2.title= region + " Region"
+  %p.grey There are #{pluralize(@constituencies_by_region[region].size, 'constituency')} is this region.
+  - @constituencies_by_region[region].each do |constituency|
+    %a{ :name => constituency.name.parameterize }
+    = render :partial => 'constituencies/constituency', :object => constituency, :locals => { :smaller_header => true }
+    %br

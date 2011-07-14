@@ -1,3 +1,6 @@
+.ndp {
+  background-color: #fde5d0 !important; }
+
 html, body, div, span, applet, object, iframe,
 p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -19,7 +22,7 @@ time, mark, audio, video {
   vertical-align: baseline; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.5em 10px;
   padding: 0;
   border: 0;
   vertical-align: baseline;
@@ -43,6 +46,10 @@ a {
   text-decoration: none; }
   a img {
     border: none; }
+
+p {
+  margin-bottom: 1em;
+  margin-left: 10px; }
 
 a:hover {
   text-decoration: underline; }
@@ -70,13 +77,15 @@ header {
     font-style: italic; }
 
 #main h2.title {
-  padding-left: 10px;
-  color: #444444; }
+  margin-top: 10px; }
 
 .flow_it {
   width: 100%;
   overflow: hidden;
   zoom: 1; }
+
+.non_column {
+  margin-left: 10px; }
 
 .one_column, .two_columns, .three_columns {
   -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -93,13 +102,16 @@ header {
   color: #333333; }
   .one_column p, .two_columns p, .three_columns p {
     margin-bottom: 1em;
-    line-height: 1.3; }
-  .one_column h2, .one_column h3, .two_columns h2, .two_columns h3, .three_columns h2, .three_columns h3 {
-    margin-bottom: 1em; }
-  .one_column ul, .two_columns ul, .three_columns ul {
+    margin-left: 0; }
+
+.non_column, .one_column, .two_columns, .three_columns {
+  line-height: 1.3; }
+  .non_column ul, .one_column ul, .two_columns ul, .three_columns ul {
     margin-left: 15px;
+    margin-bottom: 1em; }
+  .non_column h1, .non_column h2, .non_column h3, .non_column h4, .one_column h1, .one_column h2, .one_column h3, .one_column h4, .two_columns h1, .two_columns h2, .two_columns h3, .two_columns h4, .three_columns h1, .three_columns h2, .three_columns h3, .three_columns h4 {
     margin-bottom: 1em;
-    line-height: 1.3; }
+    margin-left: 0; }
 
 .three_columns {
   width: 918px; }
@@ -110,9 +122,9 @@ header {
 .one_column {
   width: 278px; }
 
-.politicians {
+.politicians, .incumbents {
   margin-top: 1em; }
-  .politicians .politician {
+  .politicians .politician, .incumbents .politician {
     -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     -icab-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     -khtml-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -126,20 +138,39 @@ header {
     padding-left: 10px;
     background-color: #eeeeee;
     float: left; }
-    .politicians .politician .name {
+    .politicians .politician p, .incumbents .politician p {
+      margin-left: 0; }
+    .politicians .politician .name, .incumbents .politician .name {
       margin: 1em 0; }
-      .politicians .politician .name .incumbent_link a {
+      .politicians .politician .name .incumbent_link a, .incumbents .politician .name .incumbent_link a {
         font-style: italic;
         font-size: 0.75em; }
-    .politicians .politician .election_website, .politicians .politician .phone {
+    .politicians .politician .election_website, .incumbents .politician .election_website {
       font-size: 0.85em;
       margin-bottom: 1em; }
-    .politicians .politician .image {
+    .politicians .politician .phone, .politicians .politician .party, .incumbents .politician .phone, .incumbents .politician .party {
+      font-size: 0.75em; }
+    .politicians .politician .image, .incumbents .politician .image {
       float: right; }
-    .politicians .politician .icons {
+    .politicians .politician .icons, .incumbents .politician .icons {
       margin-bottom: 10px; }
-      .politicians .politician .icons a img {
+      .politicians .politician .icons a img, .incumbents .politician .icons a img {
         border-bottom: 2px solid #3b59bb; }
+
+.incumbents .show_constituency, .politicians .show_constituency {
+  min-height: 190px; }
+  .incumbents .show_constituency .image, .politicians .show_constituency .image {
+    margin-top: -20px; }
+  .incumbents .show_constituency .constituency, .politicians .show_constituency .constituency {
+    margin-top: 10px; }
+    .incumbents .show_constituency .constituency a, .politicians .show_constituency .constituency a {
+      font-weight: bold;
+      font-size: 1.2em; }
+    .incumbents .show_constituency .constituency .since, .politicians .show_constituency .constituency .since {
+      font-size: 0.75em;
+      margin-top: 0; }
+    .incumbents .show_constituency .constituency a, .incumbents .show_constituency .constituency .since, .politicians .show_constituency .constituency a, .politicians .show_constituency .constituency .since {
+      color: #777777; }
 
 .social p {
   margin-top: 1em; }
@@ -150,6 +181,15 @@ header {
   font-size: 0.9em; }
   .breadcrumbs a {
     color: #6981d0; }
+
+.visible_block_when_mobile {
+  display: none; }
+
+.grey {
+  color: #777777; }
+
+.small {
+  font-size: 0.8em; }
 
 @media all and (max-width: 959px) {
   header {
@@ -179,4 +219,10 @@ header {
     width: 320px; }
 
   .three_columns, .two_columns {
-    width: 278px; } }
+    width: 278px; }
+
+  .visible_block_when_mobile {
+    display: block; }
+
+  .hidden_block_when_mobile {
+    display: none; } }

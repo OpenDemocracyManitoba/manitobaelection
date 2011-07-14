@@ -1,0 +1,20 @@
+- title 'Member of Legislative Assembly Incumbents'
+- breadcrumb('candidates', candidates_path)
+- breadcrumb('incumbents', request.fullpath)
+
+%p
+  The incumbent, in politics, is the existing holder of a political office. This term is usually used in reference to elections, in which races can often be defined as being between an incumbent and non-incumbent(s).
+  %span.small #{link_to 'source', 'http://en.wikipedia.org/wiki/Incumbent'}
+
+%br
+
+%h2 Current MLAs Running for Re-Election
+
+%p
+  There are #{@politicians.size} incumbent MLAs running for re-election.
+  %em.grey.small (Candidates are displayed alphabetically by constituency.)
+%p
+  Note that some constituency boundaries have changed since the last election. This means that certain incumbents may be running in a different or new constituency.
+
+%div.incumbents
+  = render :partial => @politicians, :locals => { :hide_incumbent_link => true, :show_constituency => true, :show_incumbent_website => true }

@@ -23,9 +23,9 @@ Manitobaelection::Application.routes.draw do
 # resources :politicians, :only => [:index,:show] 
   get 'candidates' => 'politicians#index', :as => 'candidates' 
   get 'candidates/:id/:slug' => 'politicians#show',  :as => 'candidate', :constraints => { :id => /[0-9]+/ }
+  get 'candidates/incumbents' => 'politicians#incumbents', :as => 'incumbents'
   
   root :to => "info#index"
-  get 'info/regions' => 'info#regions'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
