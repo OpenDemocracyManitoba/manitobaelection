@@ -1,10 +1,13 @@
 class Mention < ActiveRecord::Base
+  GOOGLE_NEWS_URL_1 = 'http://news.google.ca/news?pz=1&cf=all&ned=ca&hl=en&as_maxm=3&q='
+  GOOGLE_NEWS_URL_2 = '&as_qdr=a&as_drrb=q&as_mind=25&as_minm=2&cf=all&as_maxd=27&scoring=n&output=rss&num=50'
+
   belongs_to :politician
   belongs_to :news_article
 
-  attr_accessible :summary
+  attr_accessible :summary, :politician, :news_article, :politician_id, :news_article_id
 
-def self.gnews_search_for(name)
+  def self.gnews_search_for(name)
     
     query = URI.escape('"' + name +'"' + ' location:manitoba')
     find_url = GOOGLE_NEWS_URL_1 + query + GOOGLE_NEWS_URL_2

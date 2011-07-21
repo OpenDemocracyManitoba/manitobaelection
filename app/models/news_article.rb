@@ -6,7 +6,7 @@ class NewsArticle < ActiveRecord::Base
   has_many :mentions, :dependent => :destroy
   has_many :politicians, :through => :mentions
 
-  attr_accessible :title, :source, :pubdate, :gnews_url, :url, :moderation, :rejection
+  attr_accessible :title, :source, :pubdate, :gnews_url, :url, :moderation, :rejection, :politician_ids
 
   def pretty_date
     self.pubdate.strftime("%A, %d %B %Y")
@@ -19,7 +19,7 @@ class NewsArticle < ActiveRecord::Base
   before_update do |record|
     if record.moderation == 'rejected' && record.mentions.size > 0
       record.rejection ||= ''
-      record.rejection += "\n<br/>\nPre-Rejection Mentions: " + record.mentions.inject(""){|str,m| str += "#{m.candidate.name}, "}
+      record.rejection += "\n<br/>\nPre-Rejection Mentions: " + record.mentions.inject(""){|str,m| str += "#{m.politician.name}, "}
       record.mentions.each { |m| m.delete }
     end
   end

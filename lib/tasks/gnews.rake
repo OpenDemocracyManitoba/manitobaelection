@@ -1,13 +1,16 @@
 namespace :gnews do
-  task :find_candidates => :environment do
+  task :find_mentions => :environment do
     require 'open-uri'
     require 'pp'
-    candidates = Candidate.all
+
+    politicians = Politician.all
     
-    for candidate in candidates do
-      puts "Looking for mentions of #{candidate.name}."
-      articles = Mention.gnews_search_for candidate.name
+    for politician in politicians do
+      articles = Mention.gnews_search_for(politician.name)
+
+      puts "Looking for mentions of #{politician.name}."
       puts "  #{articles.size} Articles."
+
       mention_count = 0
       for article in articles do
         begin
@@ -16,15 +19,15 @@ namespace :gnews do
           puts "Unable to find or create: "
           pp article
         else
-          if !current_article.candidates.include?(candidate)
+          if !current_article.politicians.include?(politician)
             mention_count += 1
-            mention = Mention.new(:candidate => candidate, :news_article => current_article, :summary => article[:summary])
+            mention = Mention.new(:politician => politician, :news_article => current_article, :summary => article[:summary])
             puts "    Error saving mention for #{current_article.title}." if !mention.save
           end
-          if current_article.moderation == 'new'
-            current_article.moderation = 'approved'
-            current_article.save
-          end
+          #if current_article.moderation == 'new'
+            #current_article.moderation = 'approved'
+            #current_article.save
+          #end
         end
       end
       puts "  !! #{mention_count} New Mentions. !!" if mention_count != 0
