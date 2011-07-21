@@ -12,6 +12,9 @@ gem 'nifty-generators', :group => :development
 gem 'activeadmin'
 gem 'paperclip'
 gem 'rails-backup-migrate'
+gem 'nokogiri'
+gem 'feed-normalizer'
+gem 'rdiscount'
 
 # Use unicorn as the web server
 # gem 'unicorn'

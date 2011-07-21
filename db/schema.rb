@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110709180329) do
+ActiveRecord::Schema.define(:version => 20110719040721) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -55,6 +55,26 @@ ActiveRecord::Schema.define(:version => 20110709180329) do
     t.datetime "updated_at"
     t.string   "pdf_map_url"
     t.string   "region"
+  end
+
+  create_table "mentions", :force => true do |t|
+    t.integer  "politician_id"
+    t.integer  "news_article_id"
+    t.text     "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news_articles", :force => true do |t|
+    t.string   "title"
+    t.string   "source"
+    t.datetime "pubdate"
+    t.text     "gnews_url"
+    t.string   "url"
+    t.string   "moderation", :default => "new"
+    t.text     "rejection"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "parties", :force => true do |t|

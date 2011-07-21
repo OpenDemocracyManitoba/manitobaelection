@@ -1,0 +1,17 @@
+one:
+  title: MyString
+  source: MyString
+  pubdate: 2011-07-18 23:07:21
+  gnews_url: MyText
+  url: MyString
+  moderation: MyString
+  rejection: MyText
+
+two:
+  title: MyString
+  source: MyString
+  pubdate: 2011-07-18 23:07:21
+  gnews_url: MyText
+  url: MyString
+  moderation: MyString
+  rejection: MyText

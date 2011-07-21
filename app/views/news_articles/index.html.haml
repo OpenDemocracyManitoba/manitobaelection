@@ -1,0 +1,22 @@
+- title "News Articles"
+
+%table
+  %tr
+    %th Title
+    %th Source
+    %th Pubdate
+    %th Gnews url
+    %th Url
+    %th Moderation
+    %th Rejection
+  - for news_article in @news_articles
+    %tr
+      %td= news_article.title
+      %td= news_article.source
+      %td= news_article.pubdate
+      %td= news_article.gnews_url
+      %td= news_article.url
+      %td= news_article.moderation
+      %td= news_article.rejection
+      %td= link_to 'Show', news_article
+

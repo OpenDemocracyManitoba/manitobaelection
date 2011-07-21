@@ -2,6 +2,10 @@ class Politician < ActiveRecord::Base
 
   belongs_to :party
   belongs_to :constituency
+
+  has_many :mentions, :dependent => :destroy
+  has_many :news_articles, :through => :mentions
+
   attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id
 
   validates_presence_of :name, :constituency, :party

@@ -1,0 +1,26 @@
+- title "News Article"
+
+%p
+  %strong Title:
+  = @news_article.title
+%p
+  %strong Source:
+  = @news_article.source
+%p
+  %strong Pubdate:
+  = @news_article.pubdate
+%p
+  %strong Gnews Url:
+  = @news_article.gnews_url
+%p
+  %strong Url:
+  = @news_article.url
+%p
+  %strong Moderation:
+  = @news_article.moderation
+%p
+  %strong Rejection:
+  = @news_article.rejection
+
+%p
+  = link_to "View All", news_articles_path

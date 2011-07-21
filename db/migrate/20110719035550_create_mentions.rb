@@ -1,7 +1,7 @@
 class CreateMentions < ActiveRecord::Migration
   def self.up
     create_table :mentions do |t|
-      t.integer :candidate_id
+      t.integer :politician_id
       t.integer :news_article_id
       t.text :summary
 
