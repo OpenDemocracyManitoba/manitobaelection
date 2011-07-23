@@ -9,7 +9,7 @@ class NewsArticle < ActiveRecord::Base
   attr_accessible :title, :source, :pubdate, :gnews_url, :url, :moderation, :rejection, :politician_ids
 
   def pretty_date
-    self.pubdate.strftime("%A, %d %B %Y")
+    self.pubdate.blank? ? '' : self.pubdate.strftime("%A, %d %B %Y") 
   end
   
   def fixed_url
