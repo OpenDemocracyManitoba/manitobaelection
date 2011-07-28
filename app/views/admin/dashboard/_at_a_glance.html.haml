@@ -1,10 +1,12 @@
 %p
   %strong Politicians:
   = politician_count
-  %br
+  \- 
   %strong Constituencies:
   = constituency_count
   %br
-  %strong News Awaiting Moderation:
-  = news_awaiting_moderation
-  = link_to 'moderate', '/news_articles/moderate'
+  %strong News Articles:
+  #{news_approved} Approved. #{news_unmoderated} #{link_to 'Unmoderated', moderate_news_articles_path}. #{news_rejected} Rejected.
+  \- 
+  %strong News Sources: 
+  = news_sources

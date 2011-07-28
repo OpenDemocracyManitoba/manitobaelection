@@ -4,7 +4,10 @@ ActiveAdmin::Dashboards.build do
     div do 
       render 'at_a_glance', { :politician_count => Politician.count, 
                               :constituency_count => Constituency.count,
-                              :news_awaiting_moderation => NewsArticle.where('moderation' => 'new').size
+                              :news_unmoderated => NewsArticle.unmoderated.size,
+                              :news_approved => NewsArticle.approved.size,
+                              :news_rejected => NewsArticle.rejected.size,
+                              :news_sources  => NewsArticle.approved.group_by(&:source).keys.size
       }
     end
   end
