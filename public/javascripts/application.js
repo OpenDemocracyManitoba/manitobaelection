@@ -20,6 +20,12 @@
 
 $(document).ready(function(){
     $('div.politicians').shuffle();
+    $('.ajax_button').click(function() { 
+        var parent_div = $(this).parent().parent();
 
+        parent_div.append('<p style="color:green;">Sending...</p>');
+        $('form',parent_div).hide();
+
+    });
 
 });
