@@ -1,5 +1,9 @@
 Manitobaelection::Application.routes.draw do
-  resources :news_articles
+  resources :news_articles, :only => [:index, :show, :update] do
+    collection do
+      get 'moderate'
+    end
+  end
 
   ActiveAdmin.routes(self)
   post '/admin/parties/:id' => 'admin/parties#update'

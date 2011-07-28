@@ -3,7 +3,9 @@ ActiveAdmin::Dashboards.build do
   section "At a Glance", :priority => 1 do
     div do 
       render 'at_a_glance', { :politician_count => Politician.count, 
-                              :constituency_count => Constituency.count }
+                              :constituency_count => Constituency.count,
+                              :news_awaiting_moderation => NewsArticle.where('moderation' => 'new').size
+      }
     end
   end
 

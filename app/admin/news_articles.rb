@@ -14,6 +14,7 @@ ActiveAdmin.register NewsArticle do
       article.mentions.size.to_s
     end
     column :created_at
+    default_actions
   end
 
   show do
