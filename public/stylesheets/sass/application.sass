@@ -208,6 +208,18 @@ header
 .small
   font-size: 0.8em
 
+#main
+  position: relative
+  #feedback
+    @include drop-shadow(0, 2px, 4px, 0.2)
+    margin: 1em 0 1em 10px
+    padding: 1em 1em 0.1em 1em
+    position: absolute
+    top: 0
+    right: 0
+    width: 150px
+    background-color: #eeffaa
+
 @media all and (max-width: 959px) 
   header
     background: url(/images/MEheader_2col.png) no-repeat bottom right
@@ -238,3 +250,7 @@ header
     display: block
   .hidden_block_when_mobile
     display: none
+  #main
+    #feedback
+      position: static
+      width: auto

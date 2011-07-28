@@ -1,21 +1,27 @@
-%p
-  %span{ :id => 'unmoderated_count' }
-    = @new_articles.size
-  Unmoderated Articles
-  %br
-  %span{ :id => 'approved_count' }
-    = @approved_articles.size
-  = link_to 'Approved Articles', '#approved'
-  %br
-  %span{ :id => 'rejected_count' }
-    = @rejected_articles.size
-  = link_to 'Rejected Articles', '#rejected'
-%h2 Unmoderated Articles
+- javascript('ajax_buttons')
+
+%div#feedback
+  %p
+    %span{ :id => 'unmoderated_count' }
+      = @new_articles.size
+    Unmoderated
+    %br
+    %span{ :id => 'approved_count' }
+      = @approved_articles.size
+    = link_to 'Approved', '#approved'
+    %br
+    %span{ :id => 'rejected_count' }
+      = @rejected_articles.size
+    = link_to 'Rejected', '#rejected'
+%h1 Unmoderated Articles
+%br
 - @new_articles.each do |n|
   %div{ :id => "article#{n.id}" }
-    %h3= n.title
+    %h2= n.title
     %p
-      #{link_to n.source, n.fixed_url} - #{n.pretty_date} - id: #{n.id}
+      #{link_to n.source, n.fixed_url} - #{n.pretty_date} - edit: #{link_to n.id.to_s, edit_admin_news_article_path(n)}
+    %p.grey
+      = n.fixed_url.gsub(/(breakingnews|breaking-news)/, '<strong>\1</strong>').html_safe
     %p
       %strong Mentions:
     - n.mentions.each do |m|
@@ -33,10 +39,11 @@
     %br
 
 %a{:name => 'approved'}
-%h2 Approved Articles
+%h1 Approved Articles
+%br
 - @approved_articles.each do |n|
   %div{ :id => "article#{n.id}" }
-    %h3= n.title
+    %h2= n.title
     %p
       #{link_to n.source, n.fixed_url} - #{n.pretty_date} - id: #{n.id}
     %p
@@ -53,9 +60,9 @@
     %br
 
 %a{:name => 'rejected'}
-%h2 Rejected Articles
+%h1 Rejected Articles
 - @rejected_articles.each do |n|
-  %h3= n.title
+  %h2= n.title
   %p
     #{link_to n.source, n.fixed_url} - #{n.pretty_date}
     = n.rejection.html_safe

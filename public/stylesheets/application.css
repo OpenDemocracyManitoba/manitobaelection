@@ -191,6 +191,23 @@ header {
 .small {
   font-size: 0.8em; }
 
+#main {
+  position: relative; }
+  #main #feedback {
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -icab-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -khtml-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 1em 0 1em 10px;
+    padding: 1em 1em 0.1em 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    background-color: #eeffaa; }
+
 @media all and (max-width: 959px) {
   header {
     background: url(/images/MEheader_2col.png) no-repeat bottom right;
@@ -225,4 +242,8 @@ header {
     display: block; }
 
   .hidden_block_when_mobile {
-    display: none; } }
+    display: none; }
+
+  #main #feedback {
+    position: static;
+    width: auto; } }

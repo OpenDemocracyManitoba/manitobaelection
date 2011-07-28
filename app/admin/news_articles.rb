@@ -21,8 +21,11 @@ ActiveAdmin.register NewsArticle do
     h3 news_article.title
     div do
       (
-      link_to(news_article.source, news_article.url)  + 
+      link_to(news_article.source, news_article.fixed_url)  + 
       ' - ' + news_article.pretty_date).html_safe
+    end
+    div do
+      news_article.fixed_url
     end
     br
     h4 'Mentions'
@@ -42,6 +45,7 @@ ActiveAdmin.register NewsArticle do
       f.input :pubdate
       f.input :url
     end
+    f.buttons
 
     f.inputs "Moderation and Mentioned Candidates" do
       f.input :moderation, :collection => NewsArticle::MODERATION_OPTIONS
@@ -50,6 +54,12 @@ ActiveAdmin.register NewsArticle do
     end
 
     f.buttons
+  end
+
+  sidebar :return_to_moderation, :only => [:edit,:show] do 
+    div do
+      link_to 'Return to Moderation', moderate_news_articles_path
+    end
   end
 
 end
