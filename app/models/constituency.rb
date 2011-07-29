@@ -14,11 +14,17 @@ class Constituency < ActiveRecord::Base
 
   # Scopes and Class Methods
   
-  scope :with_politicians, includes(:politicians)
+  scope :with_politicians, includes(:politicians => :party)
+  scope :with_mentions, includes(:politicians => :mentions)
 
   def self.all_by_region
     order(:name).group_by(&:region)
   end
+
+  def self.with_approved_news
+    includes(:politicians => {:mentions => :news_article})
+  end
+
 
   # Instance Methods
 

@@ -7,6 +7,16 @@ class Mention < ActiveRecord::Base
 
   attr_accessible :summary, :politician, :news_article, :politician_id, :news_article_id
 
+  # Scopes and Class Methods
+
+  def self.by_politician(politician)
+    where(:politician_id => politician.id)
+  end
+
+  def self.with_approved_news
+    includes(:news_article).where('news_articles.moderation' => 'approved').order('news_articles.pubdate DESC')
+  end
+
   def self.gnews_search_for(name)
     
     query = URI.escape('"' + name +'"' + ' location:manitoba')

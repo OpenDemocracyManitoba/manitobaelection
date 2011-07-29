@@ -2,6 +2,7 @@
 - hide_politician_link ||= false
 - show_incumbent_website ||= false
 - show_constituency ||= false
+- hide_news_link ||= false
 
 .politician{ :class => show_constituency ? 'show_constituency' : '' }
   -if show_constituency
@@ -60,6 +61,10 @@
     - else
       = image_tag '/images/youtube_inactive.jpg'
     = image_tag '/images/rss_inactive.jpg'
+  
+  - if !hide_news_link
+    %p.news
+      News: #{ link_to "#{politician.news_articles.size} Related Articles", politician.friendly_path }
 
   %p.party
     Political Party: #{ link_to politician.party.name, politician.party.website }

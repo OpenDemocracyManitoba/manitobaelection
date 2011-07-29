@@ -4,7 +4,8 @@ class Politician < ActiveRecord::Base
   belongs_to :constituency
 
   has_many :mentions, :dependent => :destroy
-  has_many :news_articles, :through => :mentions
+  has_many :news_articles, :through => :mentions, :conditions =>'news_articles.moderation = "approved"'
+  
 
   attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id
 
@@ -20,6 +21,7 @@ class Politician < ActiveRecord::Base
  
   scope :with_constituency, includes(:constituency)
   scope :with_party, includes(:party)
+  scope :with_mentions, includes(:mentions)
   scope :incumbents, where(:incumbent => true)
 
   def self.by_name(name)

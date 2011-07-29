@@ -16,6 +16,10 @@ gem 'nokogiri'
 gem 'feed-normalizer'
 gem 'rdiscount'
 
+group :development do
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

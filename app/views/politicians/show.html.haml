@@ -5,9 +5,21 @@
 
 %div.flow_it
   %div.politicians
-    = render :partial => @politician, :locals => { :hide_politician_link => true, :show_constituency => true, :show_incumbent_website => true }
-  %div.one_column
-    %h3 Coming Soon
-    %ul
-      %li Candidate Related News Stories
-      %li Candidate Questionaires
+    = render :partial => @politician, :locals => { :hide_politician_link => true, :show_constituency => true, :show_incumbent_website => true, :hide_news_link => true }
+%div.flow_it
+  %div.three_columns
+    %h2 News that Mentions #{@politician.name}
+    %p.article_notice
+      Articles are gathered from #{ link_to 'Google News', 'http://news.google.ca' } by searching for the candidate's full name.
+    - if @mentions.size == 0
+      %em No articles found yet.
+    -else
+      - @mentions.each do |m|
+        %div.article
+          %h3= link_to m.news_article.title, m.news_article.fixed_url
+          %p.date= m.news_article.pretty_date
+          %p.summary
+            %em= m.news_article.source
+            \-
+            = m.summary.html_safe
+
