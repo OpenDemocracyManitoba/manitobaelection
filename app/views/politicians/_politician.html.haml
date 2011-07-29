@@ -64,7 +64,7 @@
   
   - if !hide_news_link
     %p.news
-      News: #{ link_to "#{politician.news_articles.size} Related Articles", politician.friendly_path }
+      News: #{ link_to pluralize(politician.news_articles.size, 'Related Article'), politician.friendly_path }
 
   %p.party
     Political Party: #{ link_to politician.party.name, politician.party.website }
