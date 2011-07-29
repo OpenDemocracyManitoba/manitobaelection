@@ -18,7 +18,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font-family: Verdana, Helvetica, Arial;
+  font-family: Verdana, Geneva, "DejaVu Sans", sans-serif;
   vertical-align: baseline; }
 
 h1, h2, h3, h4, h5, h6 {
@@ -164,12 +164,15 @@ p.article_notice {
     .politicians .politician p, .incumbents .politician p {
       margin-left: 0; }
     .politicians .politician .name, .incumbents .politician .name {
-      margin: 1em 0; }
+      margin: 1em 0;
+      font-size: 11.5px; }
+      .politicians .politician .name a, .incumbents .politician .name a {
+        font-size: 11.5px; }
       .politicians .politician .name .incumbent_link a, .incumbents .politician .name .incumbent_link a {
         font-style: italic;
-        font-size: 0.75em; }
+        font-size: 10px; }
     .politicians .politician .election_website, .incumbents .politician .election_website {
-      font-size: 0.85em;
+      font-size: 0.8em;
       margin-bottom: 1em; }
     .politicians .politician .phone, .politicians .politician .party, .politicians .politician .news, .incumbents .politician .phone, .incumbents .politician .party, .incumbents .politician .news {
       font-size: 0.75em; }
@@ -184,16 +187,18 @@ p.article_notice {
       top: 0;
       right: 0;
       text-align: center;
-      width: 108px;
+      width: 117px;
       background-color: #dbdbda;
       padding: 4px 0 2px 0; }
+      .politicians .politician .image img, .incumbents .politician .image img {
+        height: 104px; }
     .politicians .politician .icons, .incumbents .politician .icons {
       margin-bottom: 10px; }
       .politicians .politician .icons a img, .incumbents .politician .icons a img {
         border-bottom: 2px solid #3b59bb; }
 
 .incumbents .show_constituency, .politicians .show_constituency {
-  min-height: 200px; }
+  min-height: 213px; }
   .incumbents .show_constituency .constituency, .politicians .show_constituency .constituency {
     margin-top: 10px; }
     .incumbents .show_constituency .constituency a, .politicians .show_constituency .constituency a {
