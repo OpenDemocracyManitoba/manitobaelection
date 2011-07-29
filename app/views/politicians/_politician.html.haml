@@ -11,9 +11,9 @@
         - if politician.incumbent
           %p.since
             Incumbent since #{politician.incumbency_year}
-  .image
+  .image{ :style => "border-bottom: 8px solid #{politician.party.hex_colour};" }
     - if politician.image?
-      = image_tag(politician.image(:thumb), :style => "border-bottom: 6px solid #{politician.party.hex_colour};" )
+      = image_tag(politician.image(:thumb))
     - else
       = image_tag('/images/missing_candidate.jpg', :width => 100)
   %p.name

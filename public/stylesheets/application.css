@@ -151,7 +151,17 @@ header {
     .politicians .politician .phone, .politicians .politician .party, .incumbents .politician .phone, .incumbents .politician .party {
       font-size: 0.75em; }
     .politicians .politician .image, .incumbents .politician .image {
-      float: right; }
+      -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      -icab-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      -khtml-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      float: right;
+      text-align: center;
+      width: 108px;
+      background-color: #dbdbda;
+      padding: 4px 0 2px 0; }
     .politicians .politician .icons, .incumbents .politician .icons {
       margin-bottom: 10px; }
       .politicians .politician .icons a img, .incumbents .politician .icons a img {
