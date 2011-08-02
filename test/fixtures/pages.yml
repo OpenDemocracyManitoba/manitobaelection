@@ -1,0 +1,11 @@
+one:
+  title: MyString
+  content: MyText
+  permalink: MyString
+  show_title: false
+
+two:
+  title: MyString
+  content: MyText
+  permalink: MyString
+  show_title: false

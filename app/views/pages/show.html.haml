@@ -1,0 +1,7 @@
+- title @page.title
+- breadcrumb(@page.title.downcase, request.fullpath)
+
+%div.flow_it
+  %div.three_columns
+    :markdown
+      #{@page.content}

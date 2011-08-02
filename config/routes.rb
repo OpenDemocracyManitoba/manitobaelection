@@ -35,6 +35,9 @@ Manitobaelection::Application.routes.draw do
   get 'candidates' => 'politicians#index', :as => 'candidates' 
   get 'candidates/:id/:slug' => 'politicians#show',  :as => 'candidate', :constraints => { :id => /[0-9]+/ }
   get 'candidates/incumbents' => 'politicians#incumbents', :as => 'incumbents'
+
+  get 'pages/:id/:slug' => 'pages#show', :as => 'friendly_page', :constraints => { :id => /[0-9]+/ }
+
   
   root :to => "info#index"
 

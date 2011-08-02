@@ -8,7 +8,7 @@
   -if show_constituency
     %div.constituency
       - if defined?(politician.constituency)
-        = link_to politician.constituency.name, '#'
+        = link_to politician.constituency.name, politician.constituency.friendly_path
         - if politician.incumbent
           %p.since
             Incumbent since #{politician.incumbency_year}

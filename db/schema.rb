@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110802042057) do
+ActiveRecord::Schema.define(:version => 20110802204907) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -84,6 +84,15 @@ ActiveRecord::Schema.define(:version => 20110802042057) do
     t.string   "url"
     t.string   "moderation", :default => "new"
     t.text     "rejection"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "permalink"
+    t.boolean  "show_title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
