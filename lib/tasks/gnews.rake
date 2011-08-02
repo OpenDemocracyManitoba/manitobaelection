@@ -26,7 +26,7 @@ namespace :gnews do
             total_mentions += 1
             mention = Mention.new(:politician => politician, :news_article => current_article, :summary => article[:summary])
             if !mention.save
-             Rails.logger.error "News Error: #{current_article.title} DID NOT SAVE"
+             Rails.logger.error "News Error: Mention for #{current_article.title} DID NOT SAVE"
             end
           end
           #if current_article.moderation == 'new'
@@ -34,7 +34,6 @@ namespace :gnews do
             #current_article.save
           #end
         end
-        sleep rand # Currently paranoid...
       end
      # puts "  !! #{mention_count} New Mentions. !!" if mention_count != 0
     end
