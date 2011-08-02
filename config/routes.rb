@@ -6,6 +6,7 @@ Manitobaelection::Application.routes.draw do
   end
 
   ActiveAdmin.routes(self)
+  # Manual routes are required because of routing error that crops up for resources that use multipart forms with paperclip gem.
   post '/admin/parties/:id' => 'admin/parties#update'
   get '/admin/parties/:id'   => 'admin/parties#show'
   put '/admin/parties' => 'admin/parties#create'
@@ -18,10 +19,14 @@ Manitobaelection::Application.routes.draw do
   get '/admin/constituencies/:id'   => 'admin/constituencies#show'
   put '/admin/constituencies' => 'admin/constituencies#create'
 
+  post '/admin/maps/:id' => 'admin/maps#update'
+  get '/admin/maps/:id'   => 'admin/maps#show'
+  put '/admin/maps' => 'admin/maps#create'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :parties, :only => [:index,:show]
-
+  resources :maps, :only => [:show, :edit, :update]
+  resources :parties, :only => [:index,:show] 
 #  resources :constituencies, :only => [:index,:show]
   get 'constituencies' => 'constituencies#index', :as => 'constituencies'
   get 'constituencies/:id/:slug' => 'constituencies#show', :as => 'constituency', :constraints => { :id => /[0-9]+/ } 

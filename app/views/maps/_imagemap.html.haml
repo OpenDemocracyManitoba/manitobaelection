@@ -1,0 +1,16 @@
+= image_tag map.image.url(:two_column), :usemap => '#polymap'  unless map.image_file_name.blank?
+
+%map{ :name => 'polymap', :id => 'polymap' }
+  - map.polygons.each do |p|
+    - if p.link_type == 'constituency'
+      %area{  :shape => 'poly', 
+              :coords => p.coordinates, 
+              :href => p.constituency.friendly_path,
+              :alt => p.constituency.name,
+              :title => p.constituency.name }
+    - elsif p.link_type == 'submap'
+      %area{  :shape => 'poly', 
+              :coords => p.coordinates,
+              :href => map_path(p.submap),
+              :alt => p.submap.name,
+              :title => p.submap.name }

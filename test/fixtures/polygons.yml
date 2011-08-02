@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  constituency_id: 1
+  map_id: 1
+  coordinates: MyText
+  link_type: MyString
+
+two:
+  constituency_id: 1
+  map_id: 1
+  coordinates: MyText
+  link_type: MyString

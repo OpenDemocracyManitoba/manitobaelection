@@ -1,0 +1,5 @@
+= semantic_form_for @map do |f|
+  = f.inputs :name => 'Polygons' do
+    = f.semantic_fields_for :polygons do |polygon|
+      = render 'polygon_fields', :polygon => polygon
+  = f.buttons

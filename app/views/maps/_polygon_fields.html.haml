@@ -1,0 +1,6 @@
+= polygon.input :link_type, :as => :select, :collection => Polygon::POLYGON_TYPES
+= polygon.input :constituency
+= polygon.input :submap
+= polygon.input :coordinates, :as => :string
+= polygon.input :_destroy, :as => :boolean, :label => 'Delete this polygon'
+%br

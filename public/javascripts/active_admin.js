@@ -55,7 +55,14 @@ $(function(){
     if (p) {
         target = $('.pagination_information')[0];
         $(p[0]).clone().appendTo(target);
-        console.log('what!');
     }
+    $('#polygon_link_type_constituency').click(function(){
+        $('#polygon_submap_input').hide();
+        $('#polygon_constituency_input').show();
+    });
+    $('#polygon_link_type_submap').click(function(){
+        $('#polygon_submap_input').show();
+        $('#polygon_constituency_input').hide();
+    });
 
 });

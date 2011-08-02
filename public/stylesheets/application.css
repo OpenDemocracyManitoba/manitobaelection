@@ -285,3 +285,9 @@ p.article_notice {
   #main #feedback {
     position: static;
     width: auto; } }
+form.formtastic legend {
+  font-weight: bold; }
+form.formtastic fieldset {
+  padding: 10px 0; }
+form.formtastic ol {
+  list-style: none; }
