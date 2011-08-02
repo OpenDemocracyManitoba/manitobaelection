@@ -1,4 +1,7 @@
-= image_tag map.image.url(:two_column), :usemap => '#polymap'  unless map.image_file_name.blank?
+- javascript('jquery.maphilight.min')
+- javascript('map_highlight')
+
+= image_tag map.image.url(:two_column), :class => 'highmap', :usemap => '#polymap'  unless map.image_file_name.blank?
 
 %map{ :name => 'polymap', :id => 'polymap' }
   - map.polygons.each do |p|
@@ -14,3 +17,5 @@
               :href => map_path(p.submap),
               :alt => p.submap.name,
               :title => p.submap.name }
+
+
