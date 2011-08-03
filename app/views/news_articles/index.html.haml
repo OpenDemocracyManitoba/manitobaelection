@@ -1,22 +1,65 @@
-- title "News Articles"
+- title "Latest Provincial Election News"
+- breadcrumb('latest news', request.fullpath)
 
-%table
-  %tr
-    %th Title
-    %th Source
-    %th Pubdate
-    %th Gnews url
-    %th Url
-    %th Moderation
-    %th Rejection
-  - for news_article in @news_articles
-    %tr
-      %td= news_article.title
-      %td= news_article.source
-      %td= news_article.pubdate
-      %td= news_article.gnews_url
-      %td= news_article.url
-      %td= news_article.moderation
-      %td= news_article.rejection
-      %td= link_to 'Show', news_article
+.flow_it
+  .two_columns.latest_news_large
+    %h3 Latest News Articles
+    %div.grey.small
+      :markdown
+        News articles are automatically gathered from [Google News](http://news.google.ca) by searching for the full names of the candidates in the upcoming Manitoba election.
+    %br
+    - @news_by_date.each do |date, articles|
+      %h4= date
+      %ul.news
+        - articles.each do |n|
+          %li
+            %p.link
+              = link_to n.title, n.fixed_url
+              \- 
+              %span.source= n.source
+            %p.mentions
+              Mentions: 
+              - mlinks = []
+              - n.mentions.each do |m|
+                - mlinks << link_to(m.politician.name, m.politician.friendly_path)
+              = mlinks.join(', ').html_safe
+    %br
+    %p.small.grey Above are the 50 most recent news articles we've gathered. For older articles please visit the individual candidate pages.
+  .one_column
+    %h3 Manitoba Election Tweets
+    <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+    <script>
+    new TWTR.Widget({
+    version: 2,
+    type: 'search',
+    search: '#mbvotes',
+    interval: 6000,
+    title: 'Tweets Hash-tagged With',
+    subject: '#mbvotes',
+    width: 'auto',
+    height: 600,
+    theme: {
+    shell: {
+    background: '#eeeeee',
+    color: '#808080'
+    },
+    tweets: {
+    background: '#eeeeee',
+    color: '#444444',
+    links: '#3B59BB'
+    }
+    },
+    features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: false,
+    timestamp: true,
+    avatars: true,
+    toptweets: false,
+    behavior: 'default'
+    }
+    }).render().start();
+    </script>
+
 
