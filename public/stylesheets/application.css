@@ -333,3 +333,15 @@ form.formtastic ol {
 .latest_news_large p.mentions {
   color: #888888;
   font-size: 11px; }
+
+.one_column table, .two_columns table, .three_columns table {
+  font-size: 0.9em;
+  margin: 1.5em 0; }
+  .one_column table tr, .two_columns table tr, .three_columns table tr {
+    border: 1px solid #999999; }
+  .one_column table td, .one_column table th, .two_columns table td, .two_columns table th, .three_columns table td, .three_columns table th {
+    padding: 5px; }
+  .one_column table th, .two_columns table th, .three_columns table th {
+    color: #444444;
+    background-color: #dddddd;
+    text-align: left; }

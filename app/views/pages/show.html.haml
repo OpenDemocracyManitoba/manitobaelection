@@ -1,7 +1,9 @@
-- title @page.title, @page.show_title
+- title @page.title, false
 - breadcrumb(@page.title.downcase, request.fullpath)
 
 %div.flow_it
   %div.three_columns
+    - if @page.show_title
+      %h1= @page.title
     :markdown
       #{@page.content}
