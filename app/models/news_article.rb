@@ -16,6 +16,10 @@ class NewsArticle < ActiveRecord::Base
     includes(:mentions => :politician)
   end
 
+  def self.with_politicians(politicians)
+    includes(:mentions => :politician).where('politicians.id' => politicians)
+  end
+
   def self.unmoderated
     where(:moderation => 'new')
   end

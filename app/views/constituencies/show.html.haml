@@ -3,3 +3,16 @@
 - breadcrumb(@constituency.name.downcase, request.fullpath)
 
 = render :partial => @constituency
+
+%div.flow_it
+  %div.three_columns.latest_news_small
+    %h2 Latest Candidate News
+    - if @latest_news_by_date.size == 0
+      %p.grey No news articles found that mention candidates from this race.
+    - else 
+      %p.grey.small Recent articles that mention candidates from this race.
+      %br
+      = render 'news_articles/news_articles', :news_articles => @latest_news_by_date
+      %br
+      %p.grey.small
+        %em For more news click on a specific candidate.

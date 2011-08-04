@@ -6,5 +6,7 @@ class ConstituenciesController < ApplicationController
 
   def show
     @constituency = Constituency.with_politicians.find(params[:id])
+    
+    @latest_news_by_date = NewsArticle.approved.with_politicians(@constituency.politicians).limit(10).group_by(&:pretty_date)
   end
 end

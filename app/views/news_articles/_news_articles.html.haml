@@ -1,0 +1,16 @@
+- news_articles.each do |date, articles|
+  %h4= date
+  %ul.news
+    - articles.each do |n|
+      %li
+        %p.link
+          = link_to n.title, n.fixed_url
+          \- 
+          %span.source= n.source
+        %p.mentions
+          Mentions: 
+          - mlinks = []
+          - n.mentions.each do |m|
+            - mlinks << link_to(m.politician.name, m.politician.friendly_path)
+          = mlinks.join(', ').html_safe
+

@@ -8,21 +8,7 @@
       :markdown
         News articles are automatically gathered from [Google News](http://news.google.ca) by searching for the full names of the candidates in the upcoming Manitoba election.
     %br
-    - @news_by_date.each do |date, articles|
-      %h4= date
-      %ul.news
-        - articles.each do |n|
-          %li
-            %p.link
-              = link_to n.title, n.fixed_url
-              \- 
-              %span.source= n.source
-            %p.mentions
-              Mentions: 
-              - mlinks = []
-              - n.mentions.each do |m|
-                - mlinks << link_to(m.politician.name, m.politician.friendly_path)
-              = mlinks.join(', ').html_safe
+    = render 'news_articles', :news_articles => @news_by_date
     %br
     %p.small.grey Above are the 50 most recent news articles we've gathered. For older articles please visit the individual candidate pages.
   .one_column

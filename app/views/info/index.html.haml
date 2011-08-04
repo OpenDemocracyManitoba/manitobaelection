@@ -52,17 +52,5 @@
       
   %div.one_column.latest_news_small
     %h2 Latest Election News
-    - @latest_news_by_date.each do |date, articles|
-      %p.date= date
-      %ul.news
-        - articles.each do |n|
-          %li
-            %p.link
-              = link_to n.title, n.fixed_url
-            %p.mentions
-              Mentions: 
-              - mlinks = []
-              - n.mentions.each do |m|
-                - mlinks << link_to(m.politician.name, m.politician.friendly_path)
-              = mlinks.join(', ').html_safe
+    = render 'news_articles/news_articles', :news_articles => @latest_news_by_date
     %p.more= link_to 'More News...', news_articles_path

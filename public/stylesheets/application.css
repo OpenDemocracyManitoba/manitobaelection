@@ -302,6 +302,8 @@ form.formtastic fieldset {
 form.formtastic ol {
   list-style: none; }
 
+.latest_news_small h4, .latest_news_large h4 {
+  color: #666666; }
 .latest_news_small ul, .latest_news_large ul {
   list-style: none;
   margin-left: 0; }
@@ -310,9 +312,9 @@ form.formtastic ol {
 .latest_news_small p.link, .latest_news_large p.link {
   margin-bottom: 0; }
 
-.latest_news_small ul, .latest_news_small p.date, .latest_news_small p.more {
+.latest_news_small ul, .latest_news_small p.more {
   font-size: 12px; }
-.latest_news_small ul li, .latest_news_small p.date {
+.latest_news_small ul li {
   margin-bottom: 5px; }
 .latest_news_small p.date {
   color: #666666;
@@ -322,8 +324,6 @@ form.formtastic ol {
   color: #888888;
   font-size: 10px; }
 
-.latest_news_large h4 {
-  color: #666666; }
 .latest_news_large span.source {
   font-weight: bold; }
 .latest_news_large ul {
