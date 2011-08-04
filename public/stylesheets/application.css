@@ -184,7 +184,7 @@ p.article_notice {
     .politicians .politician .election_website, .politicians .party .election_website, .incumbents .politician .election_website, .incumbents .party .election_website, .parties .politician .election_website, .parties .party .election_website {
       font-size: 0.8em;
       margin-bottom: 1em; }
-    .politicians .politician .phone, .politicians .politician .party, .politicians .politician .news, .politicians .party .phone, .politicians .party .party, .politicians .party .news, .incumbents .politician .phone, .incumbents .politician .party, .incumbents .politician .news, .incumbents .party .phone, .incumbents .party .party, .incumbents .party .news, .parties .politician .phone, .parties .politician .party, .parties .politician .news, .parties .party .phone, .parties .party .party, .parties .party .news {
+    .politicians .politician .phone, .politicians .politician .candidate_party, .politicians .politician .news, .politicians .party .phone, .politicians .party .candidate_party, .politicians .party .news, .incumbents .politician .phone, .incumbents .politician .candidate_party, .incumbents .politician .news, .incumbents .party .phone, .incumbents .party .candidate_party, .incumbents .party .news, .parties .politician .phone, .parties .politician .candidate_party, .parties .politician .news, .parties .party .phone, .parties .party .candidate_party, .parties .party .news {
       font-size: 0.75em; }
     .politicians .politician .image, .politicians .party .image, .incumbents .politician .image, .incumbents .party .image, .parties .politician .image, .parties .party .image {
       -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
