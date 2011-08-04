@@ -304,6 +304,9 @@ form.formtastic ol {
 
 .latest_news_small h4, .latest_news_large h4 {
   color: #666666; }
+.latest_news_small span.source, .latest_news_large span.source {
+  color: #444444;
+  font-size: 0.8em; }
 .latest_news_small ul, .latest_news_large ul {
   list-style: none;
   margin-left: 0; }
@@ -324,8 +327,6 @@ form.formtastic ol {
   color: #888888;
   font-size: 10px; }
 
-.latest_news_large span.source {
-  font-weight: bold; }
 .latest_news_large ul {
   font-size: 13px; }
   .latest_news_large ul li {

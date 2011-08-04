@@ -1,3 +1,5 @@
+- hide_source ||= false
+
 - news_articles.each do |date, articles|
   %h4= date
   %ul.news
@@ -5,8 +7,9 @@
       %li
         %p.link
           = link_to n.title, n.fixed_url
-          \- 
-          %span.source= n.source
+          - if !hide_source
+            \- 
+            %span.source= n.source
         %p.mentions
           Mentions: 
           - mlinks = []

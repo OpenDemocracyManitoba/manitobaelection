@@ -12,7 +12,7 @@
     - else 
       %p.grey.small Recent articles that mention candidates from this race.
       %br
-      = render 'news_articles/news_articles', :news_articles => @latest_news_by_date
+      = render 'news_articles/news_articles', :news_articles => @latest_news_by_date, :hide_source => true
       %br
       %p.grey.small
         %em For more news click on a specific candidate.

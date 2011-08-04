@@ -52,5 +52,5 @@
       
   %div.one_column.latest_news_small
     %h2 Latest Election News
-    = render 'news_articles/news_articles', :news_articles => @latest_news_by_date
+    = render 'news_articles/news_articles', :news_articles => @latest_news_by_date, :hide_source => true
     %p.more= link_to 'More News...', news_articles_path
