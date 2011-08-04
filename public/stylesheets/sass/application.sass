@@ -173,9 +173,9 @@ p.article_notice
   margin-top: -10px
     
 
-.politicians, .incumbents
+.politicians, .incumbents, .parties
   margin-top: 1em 
-  .politician
+  .politician, .party
     position: relative
     @include drop-shadow(0, 2px, 5px, 0.2)
     margin: 10px
@@ -216,6 +216,18 @@ p.article_notice
       margin-bottom: 10px
       a img
         border-bottom: 2px solid $link_color
+
+.parties
+  .party
+    .image
+      width: 150px
+      height: 95px
+      img
+        height: 90px
+        width: 93%
+    p.name a
+      font-size: 1.5em
+      font-weight: bold
 
 .incumbents, .politicians
   .show_constituency

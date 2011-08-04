@@ -1,26 +1,6 @@
-- title "Party"
+- title @party.name
+- breadcrumb 'parties', parties_path
+- breadcrumb @party.name, request.fullpath
 
-%p
-  %strong Name:
-  = @party.name
-%p
-  %strong Hex Colour:
-  = @party.hex_colour
-%p
-  %strong Image File Name:
-  = @party.image_file_name
-%p
-  %strong Image Content Type:
-  = @party.image_content_type
-%p
-  %strong Image File Size:
-  = @party.image_file_size
-%p
-  %strong Image Updated At:
-  = @party.image_updated_at
-%p
-  %strong Website:
-  = @party.website
-
-%p
-  = link_to "View All", parties_path
+.flow_it.parties
+  = render @party

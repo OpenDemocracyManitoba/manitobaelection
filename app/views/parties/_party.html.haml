@@ -1,0 +1,5 @@
+.party
+  .image{ :style => "border-bottom: 8px solid #{party.hex_colour};" }
+    = image_tag party.image(:small)  unless party.image_file_name.blank?
+  %p.name= link_to party.name, party_path(party)
+  %p.website= link_to 'Party Website', party.website  unless party.website.blank?
