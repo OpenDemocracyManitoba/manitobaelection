@@ -2,10 +2,13 @@ namespace :gnews do
   task :find_mentions => :environment do
     require 'open-uri'
 
-    Rails.logger.info "News Scrape START: #{Time.now}"
+    init_logger
+
+    start = Time.now
 
     politicians = Politician.all
     total_mentions = 0
+    auto_approved = 0
 
     for politician in politicians do
       articles = Mention.gnews_search_for(politician.name)
@@ -29,16 +32,30 @@ namespace :gnews do
              Rails.logger.error "News Error: Mention for #{current_article.title} DID NOT SAVE"
             end
           end
-          #if current_article.moderation == 'new'
-            #current_article.moderation = 'approved'
-            #current_article.save
-          #end
+          # Auto approve articles that mention more than one candidate.
+          if current_article.moderation == 'new' && current_article.mentions.size > 1
+            current_article.moderation = 'approved'
+            current_article.save
+            auto_approved += 1
+          end
         end
       end
      # puts "  !! #{mention_count} New Mentions. !!" if mention_count != 0
     end
     # puts
     Rails.logger.info "Total New Mentions: #{total_mentions}"
-    Rails.logger.info "News Scrape END: #{Time.now}"
+    Rails.logger.info "Auto-Approved Articles: #{auto_approved}"
+    Rails.logger.info "News Scrape Seconds: #{Time.now - start}"
   end
+
+  def init_logger
+    if defined?(Rails) 
+      if (Rails.env == 'development')
+        Rails.logger = Logger.new(STDOUT)
+      else
+        Rails.logger.auto_flushing = true
+      end
+    end
+  end
+    
 end
