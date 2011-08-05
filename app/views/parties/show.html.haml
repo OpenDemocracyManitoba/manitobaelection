@@ -3,4 +3,24 @@
 - breadcrumb @party.name, request.fullpath
 
 .flow_it.parties
-  = render @party
+  .two_column_flow
+    .flow_it
+      = render @party
+    %br
+    %h3 The #{@party.name} Candidates
+    .flow_it.politicians
+      = render @party.politicians, :show_constituency => true, :hide_incumbent_link => true
+  .one_column.latest_news_small.row_height_medium
+    %h2 Latest #{@party.name} News
+    - if @latest_news_by_date.size == 0
+      %p.grey No news articles found that mention candidates from this party.
+    - else 
+      %p.grey.small Recent articles that mention candidates from this party.
+      %br
+      = render 'news_articles/news_articles', :news_articles => @latest_news_by_date, :hide_source => true
+      %br
+      %p.grey.small
+        %em For more news click on a specific candidate.
+
+
+
