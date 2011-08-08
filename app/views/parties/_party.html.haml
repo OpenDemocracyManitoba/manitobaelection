@@ -1,4 +1,5 @@
 - hide_party_link ||= false
+- hide_address ||= false
 
 .party
   .image{ :style => "border-bottom: 8px solid #{party.hex_colour};" }
@@ -39,7 +40,7 @@
       Phone:
       #{party.phone_number}
 
-  - if party.address?
+  - if party.address? && !hide_address
     %p.phone
       Address:
       #{party.address}
