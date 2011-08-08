@@ -1,5 +1,47 @@
+- hide_party_link ||= false
+
 .party
   .image{ :style => "border-bottom: 8px solid #{party.hex_colour};" }
     = image_tag party.image(:small)  unless party.image_file_name.blank?
-  %p.name= link_to party.name, party.friendly_path
-  %p.website= link_to 'Party Website', party.website  unless party.website.blank?
+  %p.name
+    - if hide_party_link 
+      = party.name
+    -else 
+      = link_to party.name, party.friendly_path
+  %p.website
+    - if party.website?
+      = link_to 'Party Website', party.website  unless party.website.blank?
+    - else
+      %span.grey Party Website
+  %p.icons
+    - if party.email?
+      = link_to image_tag('/images/mail_active.jpg'), "mailto:#{party.email}"
+    - else
+      = image_tag '/images/mail_inactive.jpg'
+
+    - if party.facebook?
+      = link_to image_tag('/images/facebook_active.jpg'), party.facebook
+    - else
+      = image_tag '/images/facebook_inactive.jpg'
+
+    - if party.twitter?
+      = link_to image_tag('/images/twitter_active.jpg'), party.twitter
+    - else
+      = image_tag '/images/twitter_inactive.jpg'
+
+    - if party.youtube?
+      = link_to image_tag('/images/youtube_active.jpg'), party.youtube
+    - else
+      = image_tag '/images/youtube_inactive.jpg'
+  
+  - if party.phone_number?
+    %p.phone
+      Phone:
+      #{party.phone_number}
+
+  - if party.address?
+    %p.phone
+      Address:
+      #{party.address}
+
+

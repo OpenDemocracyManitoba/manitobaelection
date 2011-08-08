@@ -1,11 +1,11 @@
-- title @party.name
+- title (@party.long_name.blank?) ? @party.name : "The #{@party.long_name}"
 - breadcrumb 'parties', parties_path
 - breadcrumb @party.name, request.fullpath
 
-.flow_it.parties
+.flow_it
   .two_column_flow
-    .flow_it
-      = render @party
+    .flow_it.parties
+      = render @party, :hide_party_link => true
     %br
     %h3 The #{@party.politicians.size} #{@party.name} Candidates
     %p.small.grey Candidates are displayed alphabetically by constituency.

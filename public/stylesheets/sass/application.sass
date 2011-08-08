@@ -191,7 +191,7 @@ p.article_notice
     float: left
     p
       margin-left: 0
-    .name
+    p.name
       margin: 1em 0
       font-size: 11.5px
       a
@@ -200,10 +200,10 @@ p.article_notice
         a
           font-style: italic
           font-size: 10px
-    .election_website
+    .election_website, .website
       font-size: 0.8em
       margin-bottom: 1em
-    .phone, .candidate_party, .news
+    .phone, .candidate_party, .news, .address
       font-size: 0.75em
     .image
       @include drop-shadow(1px, 1px, 8px, 0.3)
@@ -230,10 +230,12 @@ p.article_notice
         height: 90px
         max-width: 93%
     p.name 
+      font-weight: bold
+      font-size: 1.2em
       width: 130px
       a
-        font-size: 1.5em
         font-weight: bold
+        font-size: 100%
 
 .incumbents, .politicians, .unshuffled_politicians
   .show_constituency
