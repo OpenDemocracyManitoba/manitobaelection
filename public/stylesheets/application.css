@@ -224,6 +224,8 @@ p.article_notice {
   .parties .party p.name a {
     font-weight: bold;
     font-size: 100%; }
+.parties .party p.phone, .parties .party p.address {
+  color: #444444; }
 
 .incumbents .show_constituency, .politicians .show_constituency, .unshuffled_politicians .show_constituency {
   min-height: 213px; }
