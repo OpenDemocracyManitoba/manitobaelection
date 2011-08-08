@@ -158,9 +158,9 @@ p.article_notice {
   margin-bottom: 20px;
   margin-top: -10px; }
 
-.politicians, .incumbents, .parties {
+.politicians, .incumbents, .parties, .unshuffled_politicians {
   margin-top: 1em; }
-  .politicians .politician, .politicians .party, .incumbents .politician, .incumbents .party, .parties .politician, .parties .party {
+  .politicians .politician, .politicians .party, .incumbents .politician, .incumbents .party, .parties .politician, .parties .party, .unshuffled_politicians .politician, .unshuffled_politicians .party {
     position: relative;
     -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     -icab-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -175,22 +175,22 @@ p.article_notice {
     padding-left: 10px;
     background-color: #eeeeee;
     float: left; }
-    .politicians .politician p, .politicians .party p, .incumbents .politician p, .incumbents .party p, .parties .politician p, .parties .party p {
+    .politicians .politician p, .politicians .party p, .incumbents .politician p, .incumbents .party p, .parties .politician p, .parties .party p, .unshuffled_politicians .politician p, .unshuffled_politicians .party p {
       margin-left: 0; }
-    .politicians .politician .name, .politicians .party .name, .incumbents .politician .name, .incumbents .party .name, .parties .politician .name, .parties .party .name {
+    .politicians .politician .name, .politicians .party .name, .incumbents .politician .name, .incumbents .party .name, .parties .politician .name, .parties .party .name, .unshuffled_politicians .politician .name, .unshuffled_politicians .party .name {
       margin: 1em 0;
       font-size: 11.5px; }
-      .politicians .politician .name a, .politicians .party .name a, .incumbents .politician .name a, .incumbents .party .name a, .parties .politician .name a, .parties .party .name a {
+      .politicians .politician .name a, .politicians .party .name a, .incumbents .politician .name a, .incumbents .party .name a, .parties .politician .name a, .parties .party .name a, .unshuffled_politicians .politician .name a, .unshuffled_politicians .party .name a {
         font-size: 11.5px; }
-      .politicians .politician .name .incumbent_link a, .politicians .party .name .incumbent_link a, .incumbents .politician .name .incumbent_link a, .incumbents .party .name .incumbent_link a, .parties .politician .name .incumbent_link a, .parties .party .name .incumbent_link a {
+      .politicians .politician .name .incumbent_link a, .politicians .party .name .incumbent_link a, .incumbents .politician .name .incumbent_link a, .incumbents .party .name .incumbent_link a, .parties .politician .name .incumbent_link a, .parties .party .name .incumbent_link a, .unshuffled_politicians .politician .name .incumbent_link a, .unshuffled_politicians .party .name .incumbent_link a {
         font-style: italic;
         font-size: 10px; }
-    .politicians .politician .election_website, .politicians .party .election_website, .incumbents .politician .election_website, .incumbents .party .election_website, .parties .politician .election_website, .parties .party .election_website {
+    .politicians .politician .election_website, .politicians .party .election_website, .incumbents .politician .election_website, .incumbents .party .election_website, .parties .politician .election_website, .parties .party .election_website, .unshuffled_politicians .politician .election_website, .unshuffled_politicians .party .election_website {
       font-size: 0.8em;
       margin-bottom: 1em; }
-    .politicians .politician .phone, .politicians .politician .candidate_party, .politicians .politician .news, .politicians .party .phone, .politicians .party .candidate_party, .politicians .party .news, .incumbents .politician .phone, .incumbents .politician .candidate_party, .incumbents .politician .news, .incumbents .party .phone, .incumbents .party .candidate_party, .incumbents .party .news, .parties .politician .phone, .parties .politician .candidate_party, .parties .politician .news, .parties .party .phone, .parties .party .candidate_party, .parties .party .news {
+    .politicians .politician .phone, .politicians .politician .candidate_party, .politicians .politician .news, .politicians .party .phone, .politicians .party .candidate_party, .politicians .party .news, .incumbents .politician .phone, .incumbents .politician .candidate_party, .incumbents .politician .news, .incumbents .party .phone, .incumbents .party .candidate_party, .incumbents .party .news, .parties .politician .phone, .parties .politician .candidate_party, .parties .politician .news, .parties .party .phone, .parties .party .candidate_party, .parties .party .news, .unshuffled_politicians .politician .phone, .unshuffled_politicians .politician .candidate_party, .unshuffled_politicians .politician .news, .unshuffled_politicians .party .phone, .unshuffled_politicians .party .candidate_party, .unshuffled_politicians .party .news {
       font-size: 0.75em; }
-    .politicians .politician .image, .politicians .party .image, .incumbents .politician .image, .incumbents .party .image, .parties .politician .image, .parties .party .image {
+    .politicians .politician .image, .politicians .party .image, .incumbents .politician .image, .incumbents .party .image, .parties .politician .image, .parties .party .image, .unshuffled_politicians .politician .image, .unshuffled_politicians .party .image {
       -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
       -icab-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
       -khtml-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
@@ -204,11 +204,11 @@ p.article_notice {
       width: 117px;
       background-color: #dbdbda;
       padding: 4px 0 2px 0; }
-      .politicians .politician .image img, .politicians .party .image img, .incumbents .politician .image img, .incumbents .party .image img, .parties .politician .image img, .parties .party .image img {
+      .politicians .politician .image img, .politicians .party .image img, .incumbents .politician .image img, .incumbents .party .image img, .parties .politician .image img, .parties .party .image img, .unshuffled_politicians .politician .image img, .unshuffled_politicians .party .image img {
         height: 104px; }
-    .politicians .politician .icons, .politicians .party .icons, .incumbents .politician .icons, .incumbents .party .icons, .parties .politician .icons, .parties .party .icons {
+    .politicians .politician .icons, .politicians .party .icons, .incumbents .politician .icons, .incumbents .party .icons, .parties .politician .icons, .parties .party .icons, .unshuffled_politicians .politician .icons, .unshuffled_politicians .party .icons {
       margin-bottom: 10px; }
-      .politicians .politician .icons a img, .politicians .party .icons a img, .incumbents .politician .icons a img, .incumbents .party .icons a img, .parties .politician .icons a img, .parties .party .icons a img {
+      .politicians .politician .icons a img, .politicians .party .icons a img, .incumbents .politician .icons a img, .incumbents .party .icons a img, .parties .politician .icons a img, .parties .party .icons a img, .unshuffled_politicians .politician .icons a img, .unshuffled_politicians .party .icons a img {
         border-bottom: 2px solid #3b59bb; }
 
 .parties .party .image {
@@ -216,22 +216,24 @@ p.article_notice {
   height: 95px; }
   .parties .party .image img {
     height: 90px;
-    width: 93%; }
-.parties .party p.name a {
-  font-size: 1.5em;
-  font-weight: bold; }
+    max-width: 93%; }
+.parties .party p.name {
+  width: 130px; }
+  .parties .party p.name a {
+    font-size: 1.5em;
+    font-weight: bold; }
 
-.incumbents .show_constituency, .politicians .show_constituency {
+.incumbents .show_constituency, .politicians .show_constituency, .unshuffled_politicians .show_constituency {
   min-height: 213px; }
-  .incumbents .show_constituency .constituency, .politicians .show_constituency .constituency {
+  .incumbents .show_constituency .constituency, .politicians .show_constituency .constituency, .unshuffled_politicians .show_constituency .constituency {
     margin-top: 10px; }
-    .incumbents .show_constituency .constituency a, .politicians .show_constituency .constituency a {
+    .incumbents .show_constituency .constituency a, .politicians .show_constituency .constituency a, .unshuffled_politicians .show_constituency .constituency a {
       font-weight: bold;
       font-size: 1.2em; }
-    .incumbents .show_constituency .constituency .since, .politicians .show_constituency .constituency .since {
+    .incumbents .show_constituency .constituency .since, .politicians .show_constituency .constituency .since, .unshuffled_politicians .show_constituency .constituency .since {
       font-size: 0.75em;
       margin-top: 0; }
-    .incumbents .show_constituency .constituency a, .incumbents .show_constituency .constituency .since, .politicians .show_constituency .constituency a, .politicians .show_constituency .constituency .since {
+    .incumbents .show_constituency .constituency a, .incumbents .show_constituency .constituency .since, .politicians .show_constituency .constituency a, .politicians .show_constituency .constituency .since, .unshuffled_politicians .show_constituency .constituency a, .unshuffled_politicians .show_constituency .constituency .since {
       color: #777777; }
 
 .social p {

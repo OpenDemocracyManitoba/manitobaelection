@@ -7,8 +7,9 @@
     .flow_it
       = render @party
     %br
-    %h3 The #{@party.name} Candidates
-    .flow_it.politicians
+    %h3 The #{@party.politicians.size} #{@party.name} Candidates
+    %p.small.grey Candidates are displayed alphabetically by constituency.
+    .flow_it.unshuffled_politicians
       = render @party.politicians, :show_constituency => true, :hide_incumbent_link => true
   .one_column.latest_news_small.row_height_medium
     %h2 Latest #{@party.name} News

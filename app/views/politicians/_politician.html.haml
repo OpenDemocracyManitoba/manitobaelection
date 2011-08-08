@@ -67,7 +67,7 @@
       News: #{ link_to pluralize(politician.news_articles.size, 'Related Article'), politician.friendly_path }
 
   %p.candidate_party
-    Political Party: #{ link_to politician.party.name, politician.party.website }
+    Political Party: #{ link_to politician.party.name, politician.party.friendly_path }
 
   - if politician.phone_number?
     %p.phone

@@ -177,7 +177,7 @@ p.article_notice
   margin-top: -10px
     
 
-.politicians, .incumbents, .parties
+.politicians, .incumbents, .parties, .unshuffled_politicians
   margin-top: 1em 
   .politician, .party
     position: relative
@@ -228,12 +228,14 @@ p.article_notice
       height: 95px
       img
         height: 90px
-        width: 93%
-    p.name a
-      font-size: 1.5em
-      font-weight: bold
+        max-width: 93%
+    p.name 
+      width: 130px
+      a
+        font-size: 1.5em
+        font-weight: bold
 
-.incumbents, .politicians
+.incumbents, .politicians, .unshuffled_politicians
   .show_constituency
     min-height: 213px
     .constituency

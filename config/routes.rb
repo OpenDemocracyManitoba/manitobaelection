@@ -26,19 +26,19 @@ Manitobaelection::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :maps, :only => [:show, :edit, :update]
-  resources :parties, :only => [:index,:show] 
-#  resources :constituencies, :only => [:index,:show]
+
   get 'constituencies' => 'constituencies#index', :as => 'constituencies'
   get 'constituencies/:id/:slug' => 'constituencies#show', :as => 'constituency', :constraints => { :id => /[0-9]+/ } 
 
-# resources :politicians, :only => [:index,:show] 
   get 'candidates' => 'politicians#index', :as => 'candidates' 
   get 'candidates/:id/:slug' => 'politicians#show',  :as => 'candidate', :constraints => { :id => /[0-9]+/ }
   get 'candidates/incumbents' => 'politicians#incumbents', :as => 'incumbents'
 
   get 'pages/:id/:slug' => 'pages#show', :as => 'friendly_page', :constraints => { :id => /[0-9]+/ }
 
-  
+  resources :parties, :only => [:index] 
+  get 'parties/:id/:slug' => 'parties#show', :as => 'party', :constraints => { :id => /[0-9]+/ }
+
   root :to => "info#index"
 
   # The priority is based upon order of creation:
