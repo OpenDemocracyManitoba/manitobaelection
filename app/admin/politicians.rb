@@ -6,6 +6,7 @@ ActiveAdmin.register Politician do
       f.input :constituency
       f.input :incumbent_since
       f.input :party
+      f.input :party_leader, :as => :boolean
       f.input :image
     end
 
@@ -64,6 +65,7 @@ ActiveAdmin.register Politician do
     column :office_address
     column :phone_number
     column :party
+    column :party_leader
     column :constituency
   end
 

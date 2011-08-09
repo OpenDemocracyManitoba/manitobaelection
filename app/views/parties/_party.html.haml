@@ -37,12 +37,10 @@
   
   - if party.phone_number?
     %p.phone
-      Phone:
       #{party.phone_number}
 
   - if party.address? && !hide_address
     %p.phone
-      Address:
       #{party.address}
 
 

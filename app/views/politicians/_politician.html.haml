@@ -39,7 +39,7 @@
       - if politician.website?
         = link_to 'Election Website', politician.website
       - else
-        %span.grey Election Website
+        Election Website
   %p.icons
     - if politician.email?
       = link_to image_tag('/images/mail_active.jpg'), "mailto:#{politician.email}"
@@ -71,5 +71,4 @@
 
   - if politician.phone_number?
     %p.phone
-      Phone:
       #{politician.phone_number}

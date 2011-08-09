@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110808040323) do
+ActiveRecord::Schema.define(:version => 20110809053209) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20110808040323) do
     t.datetime "updated_at"
     t.integer  "party_id"
     t.integer  "incumbency_year"
+    t.boolean  "party_leader",       :default => false
   end
 
   create_table "polygons", :force => true do |t|

@@ -7,7 +7,7 @@ class Politician < ActiveRecord::Base
   has_many :news_articles, :through => :mentions, :conditions =>'news_articles.moderation = "approved"'
   
 
-  attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id
+  attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id, :party_leader
 
   validates_presence_of :name, :constituency, :party
   validates_format_of :website, :incumbent_website, :facebook, :youtube, :twitter, :with => /^(#{URI::regexp(%w(http https))})$/, :allow_blank => true
