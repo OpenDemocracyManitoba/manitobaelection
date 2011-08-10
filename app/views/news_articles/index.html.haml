@@ -10,7 +10,7 @@
     %br
     = render 'news_articles', :news_articles => @news_by_date
     %br
-    %p.small.grey Above are the 50 most recent news articles we've gathered. For older articles please visit the individual candidate pages.
+    = paginate @news_articles
   .one_column
     %h3 Manitoba Election Tweets
     <script src="http://widgets.twimg.com/j/2/widget.js"></script>

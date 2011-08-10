@@ -8,7 +8,7 @@ class NewsArticlesController < ApplicationController
   end
 
   def index
-    @news_articles = NewsArticle.with_mentions_and_politicians.approved.limit(50)
+    @news_articles = NewsArticle.with_mentions_and_politicians.approved.page(params[:page])
     @news_by_date = @news_articles.group_by(&:pretty_date)
   end
 

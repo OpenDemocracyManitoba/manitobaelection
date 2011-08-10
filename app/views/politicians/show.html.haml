@@ -14,6 +14,8 @@
     - if @mentions.size == 0
       %em No articles found yet.
     -else
+      = paginate @mentions
+      %br
       - @mentions.each do |m|
         %div.article
           %h3= link_to m.news_article.title, m.news_article.fixed_url
@@ -22,4 +24,5 @@
             %em= m.news_article.source
             \-
             = m.summary.html_safe
+      = paginate @mentions
 

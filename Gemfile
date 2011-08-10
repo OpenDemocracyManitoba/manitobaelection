@@ -9,12 +9,13 @@ gem 'mysql2', '~> 0.2.6'
 gem 'haml'
 gem 'sass'
 gem 'nifty-generators', :group => :development
-gem 'activeadmin'
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git', :ref => '811f286fda3b6dfa91aa'
 gem 'paperclip'
 gem 'rails-backup-migrate'
 gem 'nokogiri'
 gem 'feed-normalizer'
 gem 'rdiscount'
+gem 'kaminari'
 
 group :development do
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'

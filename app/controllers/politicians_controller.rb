@@ -6,7 +6,7 @@ class PoliticiansController < ApplicationController
 
   def show
     @politician = Politician.with_party.find(params[:id])
-    @mentions = Mention.with_approved_news.by_politician(@politician)
+    @mentions = Mention.with_approved_news.by_politician(@politician).page(params[:page]).per(10)
   end
 
   def incumbents
