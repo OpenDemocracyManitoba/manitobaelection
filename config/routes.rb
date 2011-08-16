@@ -20,7 +20,7 @@ Manitobaelection::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resources :maps, :only => [:show, :edit, :update]
+  resources :maps, :only => [:index, :show, :edit, :update]
 
   resources :news_articles, :only => [:index, :show, :update] do
     collection do

@@ -4,6 +4,10 @@ class MapsController < ApplicationController
   def show
   end
 
+  def index
+    @maps = Map.all
+  end
+
   def edit
     @map = Map.find(params[:id])
     @map.polygons.build

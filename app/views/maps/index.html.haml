@@ -1,0 +1,6 @@
+%div.flow_it
+  %div.three_columns
+    %h2 Edit Map Polygons
+    %ul
+      - @maps.each do |map|
+        %li= link_to map.name, edit_map_path(map)
