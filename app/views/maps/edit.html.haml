@@ -1,5 +1,6 @@
-%div.one_column
-  %h2 #{@map.name} Polygons
-  = render :partial => 'form'
-%div.two_columns
-  = render 'imagemap', :map => @map
+%div.flow_it
+  %div.one_column
+    %h2 #{@map.name} Polygons
+    = render :partial => 'form'
+  %div.two_columns
+    = render 'imagemap', :map => @map
