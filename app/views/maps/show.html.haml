@@ -1,0 +1,15 @@
+- title "#{@map.name} Constituencies", false
+- breadcrumb("#{@map.name.downcase} constituencies", request.fullpath)
+
+%h2 Select Your #{@map.name} Constituency
+%p.small.grey.hidden_block_when_mobile
+  Find by name or click the map.
+%div.flow_it
+  %div.two_columns.hidden_block_when_mobile
+    = render 'imagemap', :map => @map
+  %div.one_column
+    %h3 The #{@map.name} Constituencies
+    %ul
+      - @constituencies.each do |constituency|
+        %li= link_to constituency.name, constituency.friendly_path
+

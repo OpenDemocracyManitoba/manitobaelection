@@ -9,6 +9,16 @@ class Map < ActiveRecord::Base
                     :path => ":rails_root/public/uploads/map_image/:id/:style/:basename.:extension"
 
   validates_presence_of :name
+  validates_inclusion_of :name, :in => Constituency::REGIONS
 
+  # Instance Methods
+
+  def slug
+    self.name.parameterize
+  end
+
+  def friendly_path
+    Rails.application.routes.url_helpers.constituency_path(:id => self.id, :slug => self.slug)
+  end
 
 end

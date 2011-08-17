@@ -1,7 +1,10 @@
 class MapsController < ApplicationController
-  before_filter :authenticate_admin_user!
+  before_filter :authenticate_admin_user!, :except => :show
 
   def show
+    @map = Map.find(params[:id])
+    # Oh oh. This is a fakey foreign association here with maps. A map belongs to a region. As does a constit.
+    @constituencies = Constituency.where(:region => @map.name)
   end
 
   def index
