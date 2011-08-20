@@ -18,7 +18,7 @@ class Map < ActiveRecord::Base
   end
 
   def friendly_path
-    Rails.application.routes.url_helpers.constituency_path(:id => self.id, :slug => self.slug)
+    Rails.application.routes.url_helpers.friendly_map_path(:id => self.id, :slug => self.slug)
   end
 
 end

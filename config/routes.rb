@@ -21,7 +21,7 @@ Manitobaelection::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :maps, :only => [:index, :edit, :update]
-  get 'maps/:id/:slug' => 'maps#show', :as => 'map', :constraints => { :id => /[0-9]+/ }
+  get 'maps/:id/:slug' => 'maps#show', :as => 'friendly_map', :constraints => { :id => /[0-9]+/ }
 
   resources :news_articles, :only => [:index, :show, :update] do
     collection do

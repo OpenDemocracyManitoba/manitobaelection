@@ -1,6 +1,8 @@
 class Page < ActiveRecord::Base
   attr_accessible :title, :content, :permalink, :show_title
 
+  validates_presence_of :permalink
+
   # Instance Methods
 
   def slug
