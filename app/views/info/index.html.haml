@@ -16,32 +16,22 @@
         - else
           The election has already occured.
     %br
-    %h2 Your MLA Candidates
+    %h2 Voter Information
     %ul
-      %li= link_to 'Find your constituency by region.', '/constituencies'
-      %li= link_to 'View all candidates.', '/candidates'
-      %li= link_to 'View the current incumbents.', '/candidates/incumbents'
-    %p
-      Also: 
-      =link_to 'Learn more about this election.', '/pages/4/election-information'
+      %li= link_to 'Your role as a voter.', '/pages/4/election-information'
+      %li= link_to 'Meet the incumbent MLAs.', '/candidates/incumbents'
+      %li= link_to 'Explore the various political parties.', '/parites'
+      %li= link_to 'Learn about this website.', '/pages/1/about-us'
+      %li= link_to 'Read our FAQ.', '/pages/2/faq/'
 
   %div.one_column.medium_row
-    %h2 About ManitobaElection.ca
-    :markdown
-      This website is a citizen created resource for the 2011 Manitoba Provincial Election.
-      
-      * [About Us](/pages/1/about-us)
-      * [Website FAQ](/pages/2/faq/)
-      * [Press](/pages/3/press)
-
-    %br
-
-    %h2 Coming Soon
-    %ul
-      %li Interactive Constituency Maps
-      %li Historical Election Results
-      %li Calendar of Election Events
-      %li Much more...
+    %h2 Meet the MLA Candidates
+    - @maps.each do |map|
+      %div.mini_maps
+        %div
+          %p.small
+            = link_to map.name, map.friendly_path
+          = link_to image_tag("/images/maps/#{map.slug}/#{map.slug}-thumb.png"), map.friendly_path, :title => 'Click to see the candidates.'
 
   %div.one_column.medium_row.social
     <iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FManitoba-Election%2F192842560733393&amp;width=275&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false&amp;height=255" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:275px; height:255px;" allowTransparency="true"></iframe>
@@ -54,3 +44,7 @@
     %h2 Latest Election News
     = render 'news_articles/news_articles', :news_articles => @latest_news_by_date, :hide_source => true
     %p.more= link_to 'More News...', news_articles_path
+
+  %div.two_columns
+    %h2 Important Election Dates
+    <iframe src="https://www.google.com/calendar/b/0/embed?showTitle=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23EEEEEE&amp;src=manitoba.election%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FWinnipeg" style=" border-width:0 " width="100%" height="400" frameborder="0" scrolling="no"></iframe>

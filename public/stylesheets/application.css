@@ -369,3 +369,12 @@ form.formtastic ol {
     color: #444444;
     background-color: #dddddd;
     text-align: left; }
+
+.mini_maps {
+  float: left;
+  margin-left: 12px; }
+  .mini_maps div {
+    height: 150px;
+    width: 125px; }
+    .mini_maps div p {
+      margin-bottom: 3px; }

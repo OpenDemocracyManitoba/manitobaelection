@@ -14,7 +14,7 @@
     - elsif p.link_type == 'submap'
       %area{  :shape => 'poly', 
               :coords => p.coordinates,
-              :href => map_path(p.submap),
+              :href => p.submap.friendly_path,
               :alt => p.submap.name,
               :title => p.submap.name }
 
