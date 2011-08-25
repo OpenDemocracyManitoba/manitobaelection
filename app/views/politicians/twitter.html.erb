@@ -1,0 +1,9 @@
+<h2>Candidates on Twitter (<%= @politicians.size %>)</h2>
+<br/><br/>
+<% @politicians.each do |politician| %>
+    <p>
+    <a href="<%= politician.twitter %>" class="twitter-follow-button">Follow <%= politician.name %></a> 
+    </p>
+<% end %>
+
+<script src="http://platform.twitter.com/widgets.js" type="text/javascript"></script> 
