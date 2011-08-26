@@ -17,6 +17,9 @@
       = image_tag(politician.image(:thumb))
     - else
       = image_tag('/images/missing_candidate.jpg', :width => 100)
+    - if politician.party_leader
+      %p
+        party leader
   %p.name
     %strong
       - if hide_politician_link

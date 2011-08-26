@@ -6,6 +6,7 @@ ActiveAdmin.register Party do
       f.input :long_name
       f.input :hex_colour
       f.input :image
+      f.input :notes
     end
 
     f.inputs "Contact" do
