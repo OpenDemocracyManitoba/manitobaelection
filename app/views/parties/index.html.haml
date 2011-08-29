@@ -1,5 +1,8 @@
 - title "Registered Political Parties"
 
+%p.small.grey
+  The following parties are <a href="/pages/2/faq/#parties">registered</a> with Elections Manitoba.
+
 .flow_it.parties
   - for party in @parties
     = render party, :hide_address => true
