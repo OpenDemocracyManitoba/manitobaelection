@@ -8,7 +8,7 @@
     - if hide_party_link 
       = party.name
     -else 
-      = link_to party.name, party.friendly_path
+      = link_to party.name, party.friendly_path, :title => "View #{party.name} Candidates"
   %p.website
     - if party.website?
       = link_to 'Party Website', party.website  unless party.website.blank?
