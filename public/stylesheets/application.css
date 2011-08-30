@@ -158,6 +158,11 @@ p.article_notice {
   margin-bottom: 20px;
   margin-top: -10px; }
 
+.politicians .politician p.name, .unshuffled_politicians .politician p.name {
+  position: absolute; }
+.politicians .politician .election_website, .politicians .politician .website, .unshuffled_politicians .politician .election_website, .unshuffled_politicians .politician .website {
+  margin-top: 3em; }
+
 .politicians .politician, .politicians .party, .incumbents .politician, .incumbents .party, .parties .politician, .parties .party, .unshuffled_politicians .politician, .unshuffled_politicians .party {
   position: relative;
   -o-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -230,7 +235,7 @@ p.article_notice {
     font-size: 100%; }
 
 .incumbents .show_constituency, .politicians .show_constituency, .unshuffled_politicians .show_constituency {
-  min-height: 213px; }
+  min-height: 208px; }
   .incumbents .show_constituency .constituency, .politicians .show_constituency .constituency, .unshuffled_politicians .show_constituency .constituency {
     margin-top: 10px; }
     .incumbents .show_constituency .constituency a, .politicians .show_constituency .constituency a, .unshuffled_politicians .show_constituency .constituency a {
