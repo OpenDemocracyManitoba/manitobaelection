@@ -7,18 +7,17 @@
     %h2 Election Countdown
     %p
       On Tuesday October 4 of 2011 the people of Manitoba go to the polls to elect their next Legislative Assembly. 
-    %p
-      %strong
-        - if @days_until_election == 0
-          The election is today!
-        - elsif @days_until_election > 0
-          There #{prefixed_pluralize(@days_until_election,'is','are','day')} until the election.
-        - else
-          The election has already occured.
+    %p.election_countdown
+      - if @days_until_election == 0
+        The election is today!
+      - elsif @days_until_election > 0
+        #{pluralize(@days_until_election,'Day')} Until the Election!
+      - else
+        The election has already occured.
     %br
     %h2 Voter Information
     %ul
-      %li= link_to 'Your role as a voter', '/pages/4/election-information'
+      %li= link_to 'Your role as a voter', '/pages/4/your-role-as-a-voter'
       %li= link_to 'Meet the incumbent MLAs', '/candidates/incumbents'
       %li= link_to 'Explore the political parties', '/parties'
       %li= link_to 'Learn about this website', '/pages/1/about-us'

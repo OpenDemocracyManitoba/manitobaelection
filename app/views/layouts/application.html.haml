@@ -16,6 +16,7 @@
 
     %link{:href => "/favicon.ico?1", :rel => "shortcut icon", :type => "image/vnd.microsoft.icon"}/
     = stylesheet_link_tag "application"
+    = stylesheet_link_tag "droplist-flyout"
     = javascript_include_tag 'modernizr-2.0.6.js'
 
     = csrf_meta_tag
@@ -29,6 +30,8 @@
         %h3
           A Citizen Created Election Resource
 
+      = render :partial => 'shared/menu'
+      
       %div#main{:role => 'main'}
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"

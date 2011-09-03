@@ -70,11 +70,11 @@ footer {
 
 header {
   background: url(/images/MEheader_3col.png) no-repeat bottom right;
-  padding: 2em 10px 0 10px;
-  margin-bottom: 1em;
-  height: 75px; }
+  padding: 25px 10px 0 10px;
+  height: 80px;
+  margin-right: 14px; }
   header h1 {
-    font-size: 3em;
+    font-size: 41px;
     margin: -10px 0 0 0; }
     header h1 a {
       color: #202040;
@@ -385,3 +385,8 @@ form.formtastic ol {
     width: 125px; }
     .mini_maps div p {
       margin-bottom: 3px; }
+
+.election_countdown {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-top: 1.2em; }

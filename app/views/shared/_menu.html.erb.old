@@ -1,0 +1,62 @@
+<div class='dropList hidden_block_when_mobile'> 
+<ul> 
+<li><a href="/">Home</a></li> 
+<li class="oneCol"><a class="oneCol fly nohover" href="">Candidates<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+  <!--[if lte IE 6]><table><tr><td><![endif]--> 
+  <div> 
+    <ul> 
+      <li class="fly"><a class="fly" href="/maps/1/winnipeg">Winnipeg<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+      <!--[if lte IE 6]><table><tr><td><![endif]--> 
+        <ul> 
+          <li><a href="/">Temp</a></li> 
+        </ul> 
+      <!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+      </li> 
+      <li class="fly"><a class="fly" href="/maps/2/brandon">Brandon<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+      <!--[if lte IE 6]><table><tr><td><![endif]--> 
+        <ul> 
+          <li><a href="/">Temp</a></li> 
+        </ul> 
+      <!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+      </li> 
+      <li class="fly"><a class="fly" href="/maps/3/southern-manitoba">Southern Manitoba<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+      <!--[if lte IE 6]><table><tr><td><![endif]--> 
+        <ul> 
+          <li><a href="/">Temp</a></li> 
+        </ul> 
+      <!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+      </li> 
+      <li class="fly"><a class="fly" href="/maps/4/northern-manitoba">Northern Manitoba<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+      <!--[if lte IE 6]><table><tr><td><![endif]--> 
+        <ul> 
+          <li><a href="/">Temp</a></li> 
+        </ul> 
+      <!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+      </li> 
+    </ul> 
+  </div> 
+<!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+</li> 
+<li><a href="/news_articles">Latest News</a></li> 
+<li class="oneCol"><a class="oneCol fly nohover" href="/election_info">Election Info<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+  <!--[if lte IE 6]><table><tr><td><![endif]--> 
+  <div> 
+    <ul> 
+      <li><a href="/pages/4/election-information">Your Role as a Voter</a></li> 
+      <li><a href="/candidates/incumbents">Election Incumbents</a></li> 
+      <li><a href="/parties">The Political Parties</a></li> 
+    </ul> 
+  </div> 
+<!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+</li> 
+<li class="oneCol"><a class="oneCol fly nohover" href="/about">About<!--[if gte IE 7]><!--></a><!--<![endif]--> 
+  <!--[if lte IE 6]><table><tr><td><![endif]--> 
+  <div> 
+    <ul> 
+      <li><a href="/pages/1/about-us">About Us</a></li> 
+      <li><a href="/pages/2/faq">FAQ</a></li> 
+    </ul> 
+  </div> 
+<!--[if lte IE 6]></td></tr></table></a><![endif]--> 
+</ul> 
+</div>

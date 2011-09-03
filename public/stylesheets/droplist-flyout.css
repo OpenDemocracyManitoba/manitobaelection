@@ -1,0 +1,97 @@
+/* ================================================================ 
+This copyright notice must be untouched at all times.
+
+The original version of this stylesheet and the associated (x)html
+is available at http://www.cssplay.co.uk/menus/droplist-flyout.html
+Copyright (c) 2005-2010 Stu Nicholls. All rights reserved.
+This stylesheet and the associated (x)html may be modified in any 
+way to fit your requirements.
+=================================================================== */
+
+/* this is a CSS answer to fix the hover/focus '~' and hover/focus '+' problem in safari and chrome */
+html {-webkit-animation: safariSelectorFix infinite 1s;}
+@-webkit-keyframes safariSelectorFix {
+0% {zoom:1;} 
+100% {zoom:1;}
+}
+
+.menu {height:25px; background:#eee; margin:0 9px 15px 9px; padding-left:20px;
+-moz-border-radius: 5px 5px 0 0;
+-webkit-border-radius: 5px 5px 0 0;
+-ms-border-radius: 5px 5px 0 0;
+border-radius: 5px 5px 0 0;
+border: 1px solid #ddd;
+-o-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-icab-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-khtml-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {margin:0; padding:0; list-style:none; white-space:nowrap; position:relative;}
+.menu > ul {float:left;}
+
+.menu ul ul {position:absolute; left:-9999px;}
+.menu > ul > li {float:left; display:block; position:relative;}
+
+.menu ul ul {background:#eee; padding:10px 0; border:1px solid #ddd;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+-ms-border-radius: 5px;
+border-radius: 5px;
+}
+
+.menu > ul > li > ul {border-top:0;
+z-index: 1;
+-moz-border-radius: 0 0 5px 5px;
+-webkit-border-radius: 0 0 5px 5px;
+-ms-border-radius: 0 0 5px 5px;
+border-radius: 0 0 5px 5px;
+-o-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-icab-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-khtml-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu a {display:block; font-size: 12px; color:#444; line-height:25px; text-decoration:none;padding:0 30px 0 15px;}
+.menu > ul > li > a {float:left; color:#2B4270; font-weight:bold;}
+.menu ul ul li a {line-height:20px;}
+
+.menu ul li:hover > ul {left:0; top:25px;}
+.menu ul ul li:hover > ul {left:100%; top:auto; margin:-31px 0 0 -10px;}
+
+.menu li.left:hover > ul {left:auto; right:0; top:25px;}
+.menu li.left ul li:hover > ul {left:auto; right:100%; top:auto; margin:-31px -10px 0 0;}
+
+.menu li.left ul a {text-align:right; padding:0 15px 0 30px;}
+
+.menu li a.fly {background:transparent url(ipad4/arrow.gif) no-repeat right center;}
+.menu li.left ul a.fly {background:transparent url(ipad4/arrowl.gif) no-repeat left center;}
+
+.menu > ul li:hover > a {text-decoration: underline;}
+.menu > ul li:hover > a.nohover {text-decoration: none; cursor: default;}
+.menu ul ul li:hover > a,
+.menu ul ul li:hover > a.fly {background-color:#fcfcfc; color:#000;}
+
+.menu > ul > li.close {display:none; position:absolute; left:0; top:-25px; width:100%; height:25px; background:none;}
+.menu > ul > li.close a {width:100%; padding:0; text-indent:15px; background:#036; color:#fff;
+-moz-border-radius: 5px 5px 0 0;
+-webkit-border-radius: 5px 5px 0 0;
+-ms-border-radius: 5px 5px 0 0;
+border-radius: 5px 5px 0 0;
+
+}
+
+@media all and (max-width: 768px) {
+/* for iPhone, iPod Touch and iPad */
+.menu ul ul {display:none;}
+.menu ul li:hover > ul {display:block;}
+.menu ul li:hover ~ li.close {display:block;}
+}
+
+
+
+
