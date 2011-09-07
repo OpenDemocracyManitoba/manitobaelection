@@ -117,8 +117,8 @@ header {
 
 .non_column, .one_column, .two_columns, .three_columns {
   line-height: 1.3; }
-  .non_column ul, .one_column ul, .two_columns ul, .three_columns ul {
-    margin-left: 15px;
+  .non_column ul, .non_column ol, .one_column ul, .one_column ol, .two_columns ul, .two_columns ol, .three_columns ul, .three_columns ol {
+    margin-left: 2em;
     margin-bottom: 1em; }
   .non_column h1, .non_column h2, .non_column h3, .non_column h4, .one_column h1, .one_column h2, .one_column h3, .one_column h4, .two_columns h1, .two_columns h2, .two_columns h3, .two_columns h4, .three_columns h1, .three_columns h2, .three_columns h3, .three_columns h4 {
     margin-bottom: 1em;
