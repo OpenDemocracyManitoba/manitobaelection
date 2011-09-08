@@ -377,6 +377,11 @@ form.formtastic ol {
     background-color: #dddddd;
     text-align: left; }
 
+div#cse table {
+  margin: 0; }
+  div#cse table tr {
+    border: none; }
+
 .mini_maps {
   float: left;
   margin-left: 12px; }
