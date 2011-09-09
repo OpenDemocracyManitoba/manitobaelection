@@ -16,4 +16,9 @@ class Page < ActiveRecord::Base
   def markup
     RDiscount.new(self.content, :smart).to_html
   end
+
+  # Synonym for title.
+  def name
+    self.title
+  end
 end

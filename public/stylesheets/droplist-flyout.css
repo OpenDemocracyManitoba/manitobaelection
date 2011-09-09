@@ -57,7 +57,7 @@ border-radius: 0 0 5px 5px;
 box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-.menu a {display:block; font-size: 12px; color:#444; line-height:25px; text-decoration:none;padding:0 30px 0 15px;}
+.menu a {display:block; font-size: 12px; color:#444; line-height:25px; text-decoration:none;padding:0 23px 0 15px;}
 .menu > ul > li > a {float:left; color:#2B4270; font-weight:bold;}
 .menu ul ul li a {line-height:20px;}
 

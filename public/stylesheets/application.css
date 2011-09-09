@@ -324,7 +324,9 @@ p.article_notice {
 
   #main #feedback {
     position: static;
-    width: auto; } }
+    width: auto; }
+  #main p.breadcrumbs {
+    margin-top: 10px; } }
 form.formtastic legend {
   font-weight: bold; }
 form.formtastic fieldset {

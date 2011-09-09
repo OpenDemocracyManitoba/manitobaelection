@@ -12,4 +12,8 @@
     %ul
       - @constituencies.each do |constituency|
         %li= link_to constituency.name, constituency.friendly_path
+    %p
+      %strong
+        Help:
+      = link_to "Find your constituency.", 'http://electionsmanitoba.ca/election/voters/where.asp', :title => 'Address look-up tool provided by Elections Manitoba.'
 
