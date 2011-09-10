@@ -23,6 +23,8 @@ Manitobaelection::Application.routes.draw do
   resources :maps, :only => [:index, :edit, :update]
   get 'maps/:id/:slug' => 'maps#show', :as => 'friendly_map', :constraints => { :id => /[0-9]+/ }
 
+  resources :issues, :only => [:index]
+
   resources :news_articles, :only => [:index, :show, :update] do
     collection do
       get 'moderate'

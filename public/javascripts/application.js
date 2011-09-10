@@ -19,5 +19,5 @@
 })(jQuery);
 
 $(document).ready(function(){
-    $('div.politicians, div.parties').shuffle();
+    $('div.politicians, div.parties, ul.issues').shuffle();
 });
