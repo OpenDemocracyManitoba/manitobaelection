@@ -28,6 +28,7 @@ Manitobaelection::Application.routes.draw do
   resources :news_articles, :only => [:index, :show, :update] do
     collection do
       get 'moderate'
+      get 'moderate_approved'
     end
     get 'page/:page', :action => :index, :on => :collection
   end

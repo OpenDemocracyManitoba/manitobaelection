@@ -1,5 +1,5 @@
 class NewsArticlesController < ApplicationController 
-  before_filter :authenticate_admin_user!, :only => [:update, :moderate]
+  before_filter :authenticate_admin_user!, :only => [:update, :moderate, :moderate_approved]
 
   respond_to :js, :only => :update
 
@@ -26,7 +26,13 @@ class NewsArticlesController < ApplicationController
 
   def moderate
     @new_articles = NewsArticle.unmoderated.with_mentions_and_politicians
-    @approved_articles = NewsArticle.approved.with_mentions_and_politicians
     @rejected_articles = NewsArticle.rejected.with_mentions_and_politicians
+    @approved_count = NewsArticle.approved.size
+  end
+
+  def moderate_approved
+    @approved_articles = NewsArticle.approved.with_mentions_and_politicians
+    @unmoderated_count = NewsArticle.unmoderated.size
+    @rejected_count = NewsArticle.rejected.size
   end
 end

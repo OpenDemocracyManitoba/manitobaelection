@@ -7,8 +7,8 @@
     Unmoderated
     %br
     %span{ :id => 'approved_count' }
-      = @approved_articles.size
-    = link_to 'Approved', '#approved'
+      = @approved_count
+    = link_to 'Approved', '/news_articles/moderate_approved'
     %br
     %span{ :id => 'rejected_count' }
       = @rejected_articles.size
@@ -31,27 +31,6 @@
     = form_for n, :remote => true do |f|
       = f.hidden_field :moderation, :value => 'approved'
       = f.submit 'approve article', :class => 'ajax_button'
-    = form_for n, :remote => true do |f|
-      = f.hidden_field :moderation, :value => 'rejected'
-      = f.submit 'reject article', :class => 'ajax_button'
-      = f.text_field :rejection
-    %br
-    %br
-
-%a{:name => 'approved'}
-%h1 Approved Articles
-%br
-- @approved_articles.each do |n|
-  %div{ :id => "article#{n.id}" }
-    %h2= n.title
-    %p
-      #{link_to n.source, n.fixed_url} - #{n.pretty_date} - id: #{n.id}
-    %p
-      %strong Mentions:
-    - n.mentions.each do |m|
-      %p
-        %em= m.politician.name
-        \- #{m.summary.html_safe  unless m.summary.blank?}
     = form_for n, :remote => true do |f|
       = f.hidden_field :moderation, :value => 'rejected'
       = f.submit 'reject article', :class => 'ajax_button'
