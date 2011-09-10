@@ -19,33 +19,32 @@
     version: 2,
     type: 'search',
     search: '#mbvotes',
-    interval: 6000,
-    title: 'Tweets Hash-tagged With',
+    interval: 30000,
+    title: 'Tweets Hash-Tagged With',
     subject: '#mbvotes',
     width: 'auto',
-    height: 1000,
+    height: 1400,
     theme: {
     shell: {
     background: '#eeeeee',
-    color: '#808080'
+    color: '#333333'
     },
     tweets: {
     background: '#eeeeee',
     color: '#444444',
-    links: '#3B59BB'
+    links: '#3b59bb'
     }
     },
     features: {
-    scrollbar: false,
-    loop: true,
+    scrollbar: true,
+    loop: false,
     live: true,
     hashtags: false,
     timestamp: true,
     avatars: true,
     toptweets: false,
-    behavior: 'default'
+    behavior: 'all'
     }
     }).render().start();
-    </script>
-
+    </script>    
 
