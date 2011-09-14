@@ -1,5 +1,5 @@
 class PoliticiansController < ApplicationController
-  before_filter :authenticate_admin_user!, :only => :twitter
+  before_filter :authenticate_admin_user!, :only => [:twitter,:questionnaires]
   def index
     @constituencies_by_region = Constituency.with_politicians.all_by_region
     @regions = Constituency::REGIONS
@@ -16,5 +16,10 @@ class PoliticiansController < ApplicationController
 
   def twitter
     @politicians = Politician.where('twitter IS NOT NULL AND twitter != ""')
+  end
+
+  def questionnaires
+    @politician = Politician.all
+    @senders = ['Mike','Kyle','Andrew']
   end
 end

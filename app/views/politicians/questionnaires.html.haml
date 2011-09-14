@@ -1,0 +1,46 @@
+- i = 0; j = 0; grouped = @politician.size / 3; @politician.each do |politician|
+  - if (i % grouped == 0) && (j < @senders.size)
+    %h2 #{@senders[j]}'s List
+    - j += 1
+  - i += 1
+  - if politician.email.blank?
+    %p
+      %strong No Email. Send to #{politician.party.name} office instead: #{politician.party.email unless politician.party.email.blank?}
+    %p
+      Please forward this to #{politician.constituency.name} candidate #{politician.name}.
+  - else
+    %p
+      = politician.email
+  %p 
+    Dear #{politician.name},
+  %p
+    I am a member of the non-partisan group Open Democracy Manitoba. We put together a provincial election website called <a href="http://manitobaelection.ca">manitobaelection.ca</a>, which is currently one of the highest traffic election websites in the province -- connecting Manitobans with their candidate contact information and other election resources.
+  %p
+    Today we are sending email questionnaires to all the candidates. We will be announcing candidate responses in our next media release, and hope that yours and your fellow candidates will be included. Responses should be sent to our manitoba.election@gmail.com email address.
+  %p
+    Please see the five main questions and one optional question below and respond at your earliest convenience. Responses are limited to 200 words per question. We will only post responses that are within this limit.
+  %p
+    We will not edit your replies nor will we editorialize or comment on your answers. Answers will be posted as text only, ignoring bold, italics, underlining or other formatting.
+  %p
+    Replies will be posted in batches as they are received. We will try our best to post your reply within 72 hours of its arrival.
+  %p
+    %em
+      After September 27th we will no longer accept questionnaire responses. Replies received after this date will not be posted to our site.
+  %p
+    While we have your attention, please visit your candidate page on our site and review the information we have posted. If you have any corrections or additions please let us know.
+  %p= "http://manitobaelection.ca" + politician.friendly_path
+  %p
+    If you have any questions, please feel free to ask.
+  %p
+    Sincerely,
+    %brt
+    Kyle Geske
+  %br
+  %p
+    About ManitobaElection.ca
+  %p
+    ManitobaElection.ca is a citizen created resource for the 2011 provincial election. The site features interactive constituency maps, a calendar of election-related events, and educational resources on legislative politics in Manitoba. Election candidates are listed along with links to their web pages, email addresses, Facebook fan pages and Twitter feeds. Links to election related news articles are updated daily.
+  %p
+    For more information: http://manitobaelection.ca/pages/1/about-us
+  %hr
+  %br
