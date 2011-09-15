@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110910141507) do
+ActiveRecord::Schema.define(:version => 20110915053155) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -57,6 +57,8 @@ ActiveRecord::Schema.define(:version => 20110910141507) do
     t.string   "region"
   end
 
+  add_index "constituencies", ["region"], :name => "index_constituencies_on_region"
+
   create_table "issues", :force => true do |t|
     t.string   "title"
     t.string   "url"
@@ -84,6 +86,9 @@ ActiveRecord::Schema.define(:version => 20110910141507) do
     t.datetime "updated_at"
   end
 
+  add_index "mentions", ["news_article_id"], :name => "index_mentions_on_news_article_id"
+  add_index "mentions", ["politician_id"], :name => "index_mentions_on_politician_id"
+
   create_table "news_articles", :force => true do |t|
     t.string   "title"
     t.string   "source"
@@ -95,6 +100,10 @@ ActiveRecord::Schema.define(:version => 20110910141507) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "news_articles", ["moderation"], :name => "index_news_articles_on_moderation"
+  add_index "news_articles", ["pubdate"], :name => "index_news_articles_on_pubdate"
+  add_index "news_articles", ["url"], :name => "index_news_articles_on_url"
 
   create_table "pages", :force => true do |t|
     t.string   "title"
@@ -148,6 +157,10 @@ ActiveRecord::Schema.define(:version => 20110910141507) do
     t.boolean  "party_leader",       :default => false
   end
 
+  add_index "politicians", ["constituency_id"], :name => "index_politicians_on_constituency_id"
+  add_index "politicians", ["party_id"], :name => "index_politicians_on_party_id"
+  add_index "politicians", ["party_leader"], :name => "index_politicians_on_party_leader"
+
   create_table "polygons", :force => true do |t|
     t.integer  "constituency_id"
     t.integer  "map_id"
@@ -157,5 +170,9 @@ ActiveRecord::Schema.define(:version => 20110910141507) do
     t.datetime "updated_at"
     t.integer  "submap_id"
   end
+
+  add_index "polygons", ["constituency_id"], :name => "index_polygons_on_constituency_id"
+  add_index "polygons", ["map_id"], :name => "index_polygons_on_map_id"
+  add_index "polygons", ["submap_id"], :name => "index_polygons_on_submap_id"
 
 end
