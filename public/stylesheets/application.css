@@ -397,3 +397,7 @@ div#cse table {
   font-weight: bold;
   font-size: 1.2em;
   margin-top: 1.2em; }
+
+div#questionnaires p, div#questionnaires em, div#questionnaires strong, div#questionnaires a {
+  font-family: arial, sans-serif;
+  font-size: 13px; }
