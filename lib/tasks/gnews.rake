@@ -33,7 +33,9 @@ namespace :gnews do
             end
           end
           # Auto approve articles that mention more than one candidate.
-          if current_article.moderation == 'new' && current_article.mentions.size > 1
+          # if current_article.moderation == 'new' && current_article.mentions.size > 1
+          # Auto approve articles, unless they mention only mike brown.
+          if current_article.moderation == 'new' && (politician.name != 'Mike Brown' || current_article.mentions.size > 1)
             current_article.moderation = 'approved'
             current_article.save
             auto_approved += 1
