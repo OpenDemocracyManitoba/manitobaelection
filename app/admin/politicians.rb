@@ -24,6 +24,10 @@ ActiveAdmin.register Politician do
       f.input :youtube
     end
 
+    f.inputs "Questionnaire" do
+      f.input :questionnaire
+    end
+
     f.buttons  
   end
 

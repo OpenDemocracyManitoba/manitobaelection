@@ -2,7 +2,7 @@ class Constituency < ActiveRecord::Base
   
   REGIONS = ["Winnipeg", "Northern Manitoba", "Brandon", "Southern Manitoba"]
   has_many :politicians
-  attr_accessible :name, :image, :image_file_name, :pdf_map_url, :region
+  attr_accessible :name, :image, :image_file_name, :pdf_map_url, :region, :description
 
   validates_inclusion_of :region, :in => REGIONS
   validates_presence_of :name

@@ -89,6 +89,7 @@ footer
   padding-top: 20px
   font-size: 10px
   color: #bbb
+  clear: both
 
 header
   background: url(/images/MEheader_3col.png) no-repeat bottom right
@@ -121,7 +122,7 @@ header
 .non_column
   margin-left: 10px
 
-.one_column, .two_columns, .three_columns
+.one_column, .two_columns, .three_columns, .two_columns_early_shrink
   @include drop-shadow(0, 2px, 5px, 0.2)
   margin: 10px
   border: 1px solid #e4e4e4
@@ -133,7 +134,7 @@ header
     margin-bottom: 1em
     margin-left: 0
 
-.non_column, .one_column, .two_columns, .three_columns
+.non_column, .one_column, .two_columns, .three_columns, .two_columns_early_shrink
   line-height: $line_height
   ul, ol
     margin-left: 2em
@@ -148,11 +149,18 @@ header
 .two_columns
   width: 598px
 
+.two_columns_early_shrink
+  width: 598px
+
 .one_column
   width: 278px
 
 .two_column_flow
   width: 640px
+  float: left
+
+.one_column_flow
+  width: 320px
   float: left
 
 .medium_row
@@ -191,7 +199,7 @@ p.article_notice
     margin: 10px
     width: 288px
     border: 1px solid #e4e4e4
-    min-height: 160px
+    min-height: 170px
     padding-left: 10px
     background-color: #eee
     float: left
@@ -211,8 +219,12 @@ p.article_notice
       color: #999
       font-size: 0.8em
       margin-bottom: 1em
-    .phone, .candidate_party, .news, .address
+    .phone, .candidate_party, .news, .address, .qanda
       font-size: 0.75em
+      margin-bottom: 0.7em
+    .qanda
+      span
+        color: #14510F
     .image
       @include drop-shadow(1px, 1px, 8px, 0.3)
       position: absolute
@@ -260,6 +272,7 @@ p.article_notice
       .since
         font-size: 0.75em
         margin-top: 0
+        margin-bottom: 0
       a, .since
         color: #778
   
@@ -307,6 +320,8 @@ p.article_notice
     width: 640px
   .three_columns
     width: 598px
+  .two_columns_early_shrink
+    width: 278px
 
 @media all and (max-width: 639px) 
   header
@@ -415,3 +430,6 @@ div#cse
 div#questionnaires p, div#questionnaires em, div#questionnaires strong, div#questionnaires a
   font-family: arial, sans-serif
   font-size: 13px
+
+div.questionnaire
+  font-size: 0.9em

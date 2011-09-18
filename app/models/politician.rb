@@ -7,7 +7,7 @@ class Politician < ActiveRecord::Base
   has_many :news_articles, :through => :mentions, :conditions =>'news_articles.moderation = "approved"'
   
 
-  attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id, :party_leader
+  attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id, :party_leader, :questionnaire
 
   validates_presence_of :name, :constituency, :party
   validates_format_of :website, :incumbent_website, :facebook, :youtube, :twitter, :with => /^(#{URI::regexp(%w(http https))})$/, :allow_blank => true
@@ -36,6 +36,10 @@ class Politician < ActiveRecord::Base
 
   def friendly_path
     Rails.application.routes.url_helpers.candidate_path(:id => self.id, :slug => self.slug)
+  end
+
+  def first_name
+    self.name.split[0]
   end
 
   # Virtual Attributes

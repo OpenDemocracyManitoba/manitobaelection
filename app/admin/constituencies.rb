@@ -6,6 +6,7 @@ ActiveAdmin.register Constituency do
       f.input :region, :as => :radio, :collection => Constituency::REGIONS
       f.input :pdf_map_url
       f.input :image
+      f.input :description
     end
 
     f.buttons  

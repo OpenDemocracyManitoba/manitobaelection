@@ -3,11 +3,10 @@
 - breadcrumb(@politician.constituency.name.downcase, @politician.constituency.friendly_path)
 - breadcrumb(@politician.name.downcase, request.fullpath)
 
-%div.flow_it
+%div{ :class => @politician.questionnaire? ? 'one_column_flow' : 'flow_it'}
   %div.politicians
-    = render :partial => @politician, :locals => { :hide_politician_link => true, :show_constituency => true, :show_incumbent_website => true, :hide_news_link => true }
-%div.flow_it
-  %div.three_columns
+    = render :partial => @politician, :locals => { :hide_politician_link => true, :show_constituency => true, :show_incumbent_website => true, :hide_news_link => true, :hide_qanda_link => true }
+  %div{ :class => @politician.questionnaire? ? 'one_column' : 'three_columns'}
     %h2 News that Mentions #{@politician.name}
     %p.article_notice
       Articles are gathered from #{ link_to 'Google News', 'http://news.google.ca' } by searching for the candidate's full name.
@@ -25,4 +24,12 @@
             \-
             = m.summary.html_safe
       = paginate @mentions
-
+- if @politician.questionnaire?
+  %div.two_columns_early_shrink
+    %a{:name => "questionnaire"}
+    %h2 Questionnaire Response
+    %div.questionnaire
+      %p.visible_block_when_mobile
+        #{@politician.name} - #{@politician.constituency.name}
+      :markdown
+        #{ @politician.questionnaire }

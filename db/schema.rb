@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110915053155) do
+ActiveRecord::Schema.define(:version => 20110917175511) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20110915053155) do
     t.datetime "updated_at"
     t.string   "pdf_map_url"
     t.string   "region"
+    t.text     "description"
   end
 
   add_index "constituencies", ["region"], :name => "index_constituencies_on_region"
@@ -155,6 +156,7 @@ ActiveRecord::Schema.define(:version => 20110915053155) do
     t.integer  "party_id"
     t.integer  "incumbency_year"
     t.boolean  "party_leader",       :default => false
+    t.text     "questionnaire"
   end
 
   add_index "politicians", ["constituency_id"], :name => "index_politicians_on_constituency_id"

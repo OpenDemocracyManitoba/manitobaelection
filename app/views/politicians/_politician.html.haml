@@ -3,6 +3,7 @@
 - show_incumbent_website ||= false
 - show_constituency ||= false
 - hide_news_link ||= false
+- hide_qanda_link ||= false
 
 .politician{ :class => show_constituency ? 'show_constituency' : '' }
   -if show_constituency
@@ -44,6 +45,10 @@
       - else
         Election Website
   %p.icons
+    - if politician.questionnaire?
+      = link_to image_tag('/images/qanda_active.jpg '), politician.friendly_path + "#questionnaire"
+    - else
+      = image_tag '/images/qanda_inactive.jpg'
     - if politician.email?
       = link_to image_tag('/images/mail_active.jpg'), "mailto:#{politician.email}"
     - else
@@ -64,7 +69,7 @@
     - else
       = image_tag '/images/youtube_inactive.jpg'
     = image_tag '/images/rss_inactive.jpg'
-  
+
   - if !hide_news_link
     %p.news
       News: #{ link_to pluralize(politician.news_articles.size, 'Related Article'), politician.friendly_path }
@@ -74,4 +79,12 @@
 
   - if politician.phone_number?
     %p.phone
-      #{politician.phone_number}
+      Phone: #{politician.phone_number}
+
+  - if politician.questionnaire?
+    %p{ :class => hide_qanda_link ? 'visible_block_when_mobile qanda' : 'qanda' }
+      %strong
+        %span
+          Questionnaire: 
+          = link_to "Read #{politician.first_name}'s Response", politician.friendly_path + "#questionnaire"
+  

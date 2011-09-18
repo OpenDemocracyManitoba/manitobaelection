@@ -1,12 +1,18 @@
 %p
   %strong Politicians:
   = politician_count
-  \- 
-  %strong Constituencies:
-  = constituency_count
+  %br
+  %strong With Questionnaires:
+  = politicians_with_questionnaires_count
+  (
+  = (100.0 * politicians_with_questionnaires_count / politician_count).round(2)
+  \%)
   %br
   %strong News Articles:
-  #{news_approved} Approved. #{news_unmoderated} #{link_to 'Unmoderated', moderate_news_articles_path}. #{news_rejected} Rejected.
-  \- 
+  #{news_approved} Approved | #{news_rejected} Rejected | #{news_unmoderated} #{link_to 'Unmoderated', moderate_news_articles_path}
+  %br
   %strong News Sources: 
   = news_sources
+  %br
+  %strong Constituencies:
+  = constituency_count

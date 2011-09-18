@@ -7,7 +7,8 @@ ActiveAdmin::Dashboards.build do
                               :news_unmoderated => NewsArticle.unmoderated.size,
                               :news_approved => NewsArticle.approved.size,
                               :news_rejected => NewsArticle.rejected.size,
-                              :news_sources  => NewsArticle.approved.group_by(&:source).keys.size
+                              :news_sources  => NewsArticle.approved.group_by(&:source).keys.size,
+                              :politicians_with_questionnaires_count => Politician.where("questionnaire != ''").count
       }
     end
   end
