@@ -1,10 +1,10 @@
 class AddManyIndexes < ActiveRecord::Migration
   def self.up
-    #add_index :news_articles, :pubdate
-    #add_index :news_articles, :url
-    #add_index :news_articles, :moderation
-    #add_index :mentions, :politician_id
-    #add_index :mentions, :news_article_id
+    add_index :news_articles, :pubdate
+    add_index :news_articles, :url
+    add_index :news_articles, :moderation
+    add_index :mentions, :politician_id
+    add_index :mentions, :news_article_id
     add_index :constituencies, :region
     add_index :politicians, :constituency_id
     add_index :politicians, :party_id
