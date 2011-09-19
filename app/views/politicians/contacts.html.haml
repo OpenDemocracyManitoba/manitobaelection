@@ -1,0 +1,21 @@
+- title 'Candidate Contact Information'
+
+%br
+- @regions.each do |region|
+  %h2.title= region + " Region"
+  - @constituencies_by_region[region].each do |constituency|
+    %h3= constituency.name
+    - constituency.politicians.each do |politician|
+      %p
+        %strong= politician.name
+        %br
+        - if politician.email?
+          #{politician.email}
+        - else 
+          No Email Available  
+        %br
+        - if politician.phone_number?
+          #{politician.phone_number}
+        - else
+          No Phone Number Available
+    %br

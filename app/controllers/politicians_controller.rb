@@ -22,4 +22,9 @@ class PoliticiansController < ApplicationController
     @politician = Politician.all
     @senders = ['Mike','Kyle','Andrew']
   end
+
+  def contacts
+    @constituencies_by_region = Constituency.with_politicians.all_by_region
+    @regions = Constituency::REGIONS
+  end
 end
