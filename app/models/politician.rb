@@ -38,6 +38,12 @@ class Politician < ActiveRecord::Base
     Rails.application.routes.url_helpers.candidate_path(:id => self.id, :slug => self.slug)
   end
 
+  #def googl_url
+    #sleep(0.1)
+    #client = Googl.client('username', 'password')
+    #client.shorten('http://manitobaelection.ca'+friendly_path).short_url
+  #end
+
   def first_name
     self.name.split[0]
   end

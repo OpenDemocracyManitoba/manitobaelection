@@ -67,13 +67,20 @@ GEM
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
+    googl (0.5.0)
+      httparty (>= 0.6.1)
+      json (>= 1.4.6)
     haml (3.1.2)
     has_scope (0.5.1)
     hpricot (0.8.4)
+    httparty (0.8.0)
+      multi_json
+      multi_xml
     i18n (0.5.0)
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
+    json (1.6.1)
     kaminari (0.12.4)
       rails (>= 3.0.0)
     mail (2.2.19)
@@ -88,6 +95,8 @@ GEM
       arel (~> 2.0.2)
     mime-types (1.16)
     mocha (0.9.12)
+    multi_json (1.0.3)
+    multi_xml (0.4.0)
     mysql2 (0.2.11)
     nifty-generators (0.4.6)
     nokogiri (1.5.0)
@@ -139,6 +148,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   feed-normalizer
+  googl
   haml
   kaminari
   mocha

@@ -40,6 +40,7 @@ Manitobaelection::Application.routes.draw do
   get 'candidates/:id/:slug(/page/:page)' => 'politicians#show',  :as => 'candidate', :constraints => { :id => /[0-9]+/ }
   get 'candidates/incumbents' => 'politicians#incumbents', :as => 'incumbents'
   get 'candidates/questionnaires' => 'politicians#questionnaires'
+  get 'candidates/tweets' => 'politicians#tweets'
   get 'candidates/contacts' => 'politicians#contacts'
   get 'twitterfollow' => 'politicians#twitter'
 

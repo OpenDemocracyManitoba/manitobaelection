@@ -1,0 +1,7 @@
+%div#tweets
+  - @politician.each do |politician|
+    %p
+      %strong
+        #{politician.name} - #{politician.party.name}
+    %p
+      Questionnaire response from #{politician.name}, #{politician.constituency.name}: #{politician.googl_url} #mbvotes #{"@#{politician.twitter.split('/').last}" if politician.twitter?} 

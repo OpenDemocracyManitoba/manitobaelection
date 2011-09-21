@@ -1,5 +1,5 @@
 class PoliticiansController < ApplicationController
-  before_filter :authenticate_admin_user!, :only => [:twitter,:questionnaires]
+  before_filter :authenticate_admin_user!, :only => [:twitter,:questionnaires,:tweets]
   def index
     @constituencies_by_region = Constituency.with_politicians.all_by_region
     @regions = Constituency::REGIONS
@@ -21,6 +21,10 @@ class PoliticiansController < ApplicationController
   def questionnaires
     @politician = Politician.all
     @senders = ['Mike','Kyle','Andrew']
+  end
+
+  def tweets
+    @politician = Politician.with_party.with_constituency.where('questionnaire != ""').order('updated_at ASC')
   end
 
   def contacts
