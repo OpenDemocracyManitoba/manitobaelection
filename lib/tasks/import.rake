@@ -15,7 +15,7 @@ namespace :import do
         lines.each do |line|
           case line
           when /^\d\) (.+)/
-            qa << "**#{$1}**" << "\n"
+            qa << "**#{$1}**" << "\n\n"
           else
             qa << line << "\n"
           end
