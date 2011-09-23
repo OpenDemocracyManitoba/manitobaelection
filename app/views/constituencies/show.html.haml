@@ -5,7 +5,16 @@
 = render :partial => @constituency
 
 %div.flow_it
-  %div.three_columns.latest_news_small
+  %div.two_columns.constit_description
+    %h2
+      = @constituency.name
+    - if @constituency.pdf_map_url?
+      %div.official_map
+        = link_to 'Official Map', @constituency.pdf_map_url
+        = image_tag 'pdf.png'
+    :markdown
+      #{@constituency.description}
+  %div.one_column.latest_news_small
     %h2 Latest Candidate News
     - if @latest_news_by_date.size == 0
       %p.grey No news articles found that mention candidates from this race.
