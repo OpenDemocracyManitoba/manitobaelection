@@ -1,0 +1,27 @@
+<% 
+   # javascript('jquery-ui-1.8.16.custom.min.js') 
+    javascript('map_slider.js')
+%>
+
+<style>
+#image-frame { width: 960px; height: 560px; position: relative; }
+#image-frame img.hmap { position: absolute; height: 550px; } 
+img#legend-1973, img#legend-1962, img#legend-1958 { width: 230px; border: 1px solid grey; }
+#legend-cont { position: absolute; top: 0; right: 0; } 
+#nav { position: absolute; bottom: 30px; right: 250px; z-index: 3; }
+#nav p { margin: 0; }
+#nav ul { list-style: none; }
+</style>
+
+<h1 id="election-title">Loading Elections...</h1>
+<div id="image-frame">
+    <div id="legend-cont">
+        <img id="legend-1973" src="/images/historic_maps/legend_1973.png"  />
+        <img id="legend-1962" src="/images/historic_maps/legend_1962.png" style="display: none;" />
+        <img id="legend-1958" src="/images/historic_maps/legend_1958.png" style="display: none;" />
+    </div>
+    <div id="nav"><p><strong>Select Year:</strong></p></div>
+</div>
+<div id="slider"></div>
+
+<link type="text/css" href="/stylesheets/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />   

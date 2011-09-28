@@ -50,6 +50,7 @@ Manitobaelection::Application.routes.draw do
   get 'parties/:id/:slug' => 'parties#show', :as => 'party', :constraints => { :id => /[0-9]+/ }
 
   get 'search' => 'info#search'
+  get 'historic-maps' => 'info#historic'
   root :to => "info#index"
 
 end

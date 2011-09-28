@@ -44,7 +44,7 @@ border-radius: 5px;
 }
 
 .menu > ul > li > ul {border-top:0;
-z-index: 1;
+z-index: 2;
 -moz-border-radius: 0 0 5px 5px;
 -webkit-border-radius: 0 0 5px 5px;
 -ms-border-radius: 0 0 5px 5px;
