@@ -1,24 +1,30 @@
 <% 
    # javascript('jquery-ui-1.8.16.custom.min.js') 
     javascript('map_slider.js')
+    title 'Historic Election Result Maps', false
 %>
 
 <style>
 #image-frame { width: 960px; height: 560px; position: relative; }
 #image-frame img.hmap { position: absolute; height: 550px; } 
-img#legend-1973, img#legend-1962, img#legend-1958 { width: 230px; border: 1px solid grey; }
-#legend-cont { position: absolute; top: 0; right: 0; } 
+img#legend-1973, img#legend-1962, img#legend-1958 { width: 230px; }
+#legend-cont { position: absolute; top: 0; right: 0; width: 230px; border: 1px solid #555; } 
+#legend-cont p { margin: 0px 10px 10px 20px; font-size: 0.8em; color: #333; }
 #nav { position: absolute; bottom: 30px; right: 250px; z-index: 3; }
 #nav p { margin: 0; }
 #nav ul { list-style: none; }
+#map_instructions { font-size: 0.9em; color: #333; }
 </style>
 
 <h1 id="election-title">Loading Elections...</h1>
+<p id="map_instructions">Select a year below to see a breakdown of the Manitoba election results for that year.</p>
 <div id="image-frame">
     <div id="legend-cont">
         <img id="legend-1973" src="/images/historic_maps/legend_1973.png"  />
         <img id="legend-1962" src="/images/historic_maps/legend_1962.png" style="display: none;" />
         <img id="legend-1958" src="/images/historic_maps/legend_1958.png" style="display: none;" />
+        <p><strong>Note:</strong> The shade of the party colours represents the level of support for a particular winning candidate.</p>
+        <p>The darker the shade, the higher the voter support.</p>
     </div>
     <div id="nav"><p><strong>Select Year:</strong></p></div>
 </div>
