@@ -14,12 +14,12 @@
         #{pluralize(@days_until_election,'Day')} Until the Election!
       - else
         The election has already occured.
-    %br
     %h2 Voter Information
     %ul
       %li= link_to 'Your role as a voter', '/pages/4/your-role-as-a-voter'
       %li= link_to 'Learn about elections in Manitoba', '/pages/10/voter-education'
       %li= link_to 'Research the election issues', '/issues'
+      %li= link_to 'See our historic election maps', '/historic-maps'
       %li= link_to 'Meet the incumbent MLAs', '/candidates/incumbents'
       %li= link_to 'Explore the political parties', '/parties'
       %li= link_to 'Search this website', '/search'
