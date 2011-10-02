@@ -14,9 +14,7 @@
     %p.small.grey Candidates are displayed alphabetically by constituency.
     .flow_it.unshuffled_politicians
       = render @party.politicians, :show_constituency => true, :hide_incumbent_link => true
-
   - if @party.notes?
-    
     .one_column
       %a{:name => "questionnaire"}
       %h2 Questionnaire Response
@@ -27,6 +25,7 @@
         %em
           Our questionnaire procedures can be found in <a href="http://manitobaelection.ca/pages/2/faq#party-questionnaires">our FAQ</a>.
   .one_column.latest_news_small.row_height_medium
+    %a{:name => "news"}
     %h2 Latest #{@party.name} News
     - if @latest_news_by_date.size == 0
       %p.grey No news articles found that mention candidates from this party.

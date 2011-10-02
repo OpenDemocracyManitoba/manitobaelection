@@ -53,4 +53,8 @@
         %span
           Questionnaire: 
           = link_to "Read the #{party.name} Response", party.friendly_path + "#questionnaire"
+  %p.news
+    %strong
+      News:
+      = link_to "The Latest #{party.name} News", party.friendly_path + "#news"
 

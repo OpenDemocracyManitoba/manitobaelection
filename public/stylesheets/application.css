@@ -228,19 +228,23 @@ p.article_notice {
     .politicians .politician .icons a img, .politicians .party .icons a img, .incumbents .politician .icons a img, .incumbents .party .icons a img, .parties .politician .icons a img, .parties .party .icons a img, .unshuffled_politicians .politician .icons a img, .unshuffled_politicians .party .icons a img {
       border-bottom: 2px solid #3b59bb; }
 
-.parties .party .image {
-  width: 150px;
-  height: 95px; }
-  .parties .party .image img {
-    height: 90px;
-    max-width: 93%; }
-.parties .party p.name {
-  font-weight: bold;
-  font-size: 1.2em;
-  width: 130px; }
-  .parties .party p.name a {
+.parties .party {
+  min-height: 208px; }
+  .parties .party .image {
+    width: 150px;
+    height: 95px; }
+    .parties .party .image img {
+      height: 90px;
+      max-width: 93%; }
+  .parties .party p.icons {
+    margin-bottom: 1.6em; }
+  .parties .party p.name {
     font-weight: bold;
-    font-size: 100%; }
+    font-size: 1.2em;
+    width: 130px; }
+    .parties .party p.name a {
+      font-weight: bold;
+      font-size: 100%; }
 
 .incumbents .show_constituency, .politicians .show_constituency, .unshuffled_politicians .show_constituency {
   min-height: 208px; }
