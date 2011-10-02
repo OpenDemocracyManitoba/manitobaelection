@@ -1,4 +1,7 @@
 class PartiesController < ApplicationController
+  
+  caches_page :index, :show
+  
   def index
     @parties = Party.all
   end

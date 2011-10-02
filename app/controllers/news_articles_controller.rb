@@ -2,6 +2,8 @@ class NewsArticlesController < ApplicationController
   before_filter :authenticate_admin_user!, :only => [:update, :moderate, :moderate_approved]
 
   respond_to :js, :only => :update
+  
+  caches_page :index
 
   def show
     @news_article = NewsArticle.find(params[:id])

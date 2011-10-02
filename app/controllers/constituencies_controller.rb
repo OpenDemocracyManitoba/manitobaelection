@@ -1,4 +1,7 @@
 class ConstituenciesController < ApplicationController
+  
+  caches_page :index, :show
+  
   def index
     @constituencies_by_region = Constituency.all_by_region
     @regions = Constituency::REGIONS

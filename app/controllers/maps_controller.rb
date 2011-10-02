@@ -1,5 +1,7 @@
 class MapsController < ApplicationController
   before_filter :authenticate_admin_user!, :except => :show
+  
+  caches_page :show
 
   def show
     @map = Map.find(params[:id])
