@@ -15,6 +15,10 @@
     - else
       %span.grey Party Website
   %p.icons
+    - if party.notes?
+      = link_to image_tag('/images/qanda_active.jpg '), party.friendly_path + "#questionnaire"
+    - else
+      = image_tag '/images/qanda_inactive.jpg'
     - if party.email?
       = link_to image_tag('/images/mail_active.jpg'), "mailto:#{party.email}"
     - else
@@ -43,4 +47,10 @@
     %p.phone
       #{party.address}
 
+  - if party.notes?
+    %p.qanda
+      %strong
+        %span
+          Questionnaire: 
+          = link_to "Read the #{party.name} Response", party.friendly_path + "#questionnaire"
 

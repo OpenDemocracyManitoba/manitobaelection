@@ -1,6 +1,3 @@
-.ndp {
-  background-color: #fde5d0 !important; }
-
 html, body, div, span, applet, object, iframe,
 p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -432,3 +429,7 @@ div.questionnaire {
 .constit_description {
   position: relative;
   font-size: 0.9em; }
+
+.notice {
+  background-color: #eeffaa;
+  border: 1px solid #efffaf; }
