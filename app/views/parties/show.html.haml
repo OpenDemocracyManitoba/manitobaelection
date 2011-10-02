@@ -15,7 +15,7 @@
     .flow_it.unshuffled_politicians
       = render @party.politicians, :show_constituency => true, :hide_incumbent_link => true
   - if @party.notes?
-    .one_column
+    .one_column.questionnaire
       %a{:name => "questionnaire"}
       %h2 Questionnaire Response
       :markdown
