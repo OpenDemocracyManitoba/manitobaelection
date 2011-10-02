@@ -1,5 +1,8 @@
 class PoliticiansController < ApplicationController
   before_filter :authenticate_admin_user!, :only => [:twitter,:questionnaires,:tweets]
+  
+  caches_page :index, :show, :incumbents, :contacts
+  
   def index
     @constituencies_by_region = Constituency.with_politicians.all_by_region
     @regions = Constituency::REGIONS
