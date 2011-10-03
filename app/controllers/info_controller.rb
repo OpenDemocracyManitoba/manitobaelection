@@ -9,6 +9,7 @@ class InfoController < ApplicationController
     maps_hash = Map.all.group_by(&:name)
     # Force the maps into the same order as the REGIONS array.
     @maps = Constituency::REGIONS.map { |name| maps_hash[name][0] }
+    @parties = Party.all
   end
   
   # view only

@@ -228,6 +228,17 @@ p.article_notice {
     .politicians .politician .icons a img, .politicians .party .icons a img, .incumbents .politician .icons a img, .incumbents .party .icons a img, .parties .politician .icons a img, .parties .party .icons a img, .unshuffled_politicians .politician .icons a img, .unshuffled_politicians .party .icons a img {
       border-bottom: 2px solid #3b59bb; }
 
+.parties_thumb {
+  overflow: auto;
+  zoom: 1; }
+  .parties_thumb .party_thumb {
+    float: left;
+    margin-right: 35px;
+    margin-bottom: 10px; }
+    .parties_thumb .party_thumb img {
+      height: 105px;
+      width: 160px; }
+
 .parties .party {
   min-height: 208px; }
   .parties .party .image {
