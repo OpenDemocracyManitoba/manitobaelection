@@ -44,6 +44,12 @@
         - if show_title?
           %h2.title= yield(:title)
 
+        %div.flow_it
+          %div.three_columns.notice
+            %p
+              %strong
+                Attention Voter! 
+              For election results please visit <a href="http://www.electionsmanitoba.ca/election/results/">Elections Manitoba</a> or one of <a href="http://manitobaelection.ca/pages/14/election-results-coverage">these fine news organizations</a>.
         = yield
 
       %footer

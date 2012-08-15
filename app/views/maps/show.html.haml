@@ -5,14 +5,6 @@
 %p.small.grey.hidden_block_when_mobile
   Find by name or click the map.
 %div.flow_it
-  %div.three_columns.notice
-    %p
-      %strong
-        Attention Voter! 
-      Please remember to 
-      = link_to "double-check your constituency.", 'http://electionsmanitoba.ca/election/voters/where.asp', :title => 'Address look-up tool provided by Elections Manitoba.', :target => '_blank'
-    %p
-      The majority of the electoral division boundaries have changed since the last election.
   %div.two_columns.hidden_block_when_mobile
     = render 'imagemap', :map => @map
   %div.one_column
