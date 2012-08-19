@@ -24,4 +24,11 @@ class InfoController < ApplicationController
     @constituencies_by_region = Constituency.all_by_region
     @regions = Constituency::REGIONS
   end
+  
+  def byelection_2012
+    @days_until_election = Date.parse("2012 September 4") - Date.today
+    @constituency = Constituency.with_politicians.find(65)
+    
+    @latest_news_by_date = NewsArticle.approved.with_politicians(@constituency.politicians).limit(10).group_by(&:pretty_date)
+  end
 end

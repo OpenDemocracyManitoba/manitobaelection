@@ -2,6 +2,8 @@
 - breadcrumb('constituencies', constituencies_path)
 - breadcrumb(@constituency.name.downcase, request.fullpath)
 
+- highlighted_notice('<p><strong> This page was created for the 2011 Manitoba Election.</strong></p><p>Visit <a href="/">our homepage</a> to learn about the <a href="/">2012 Fort Whyte byelection</a> or view <a href="http://www.elections.mb.ca/election/results/flashresults.asp">the 2011 Manitoba Election results</a>.</p>')
+
 = render :partial => @constituency
 
 %div.flow_it

@@ -51,6 +51,10 @@ Manitobaelection::Application.routes.draw do
 
   get 'search' => 'info#search'
   get 'historic-maps' => 'info#historic'
+  get 'election-2011' => "info#index", :as => 'election_2011'
+  get 'by-election-2012' => "info#byelection_2012"
+  
   root :to => "info#index"
+#  root :to => "info#byelection_2012"
 
 end

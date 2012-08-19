@@ -3,7 +3,7 @@
 
   %head
     %title
-      = title_set? ? "Manitoba Election 2011 - " + yield(:title) : "Manitoba Election 2011"
+      = title_set? ? "Manitoba Election - " + yield(:title) : "Manitoba Election"
 
     %meta{:charset => 'utf-8'}/
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
@@ -11,8 +11,8 @@
     %meta{:name => 'HandheldFriendly', :content => 'True'}/
     %meta{:name => 'MobileOptimized', :content => '320'}/
     %meta{:name => 'viewport', :content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0'}/
-    %meta{:name => 'keywords', :content => 'Manitoba election, Manitoba provincial election, Manitoba, provincial election, election, MLA, Member of Legislative Assembly, Premier, politics, government, democracy, 2011, Manitoba, Canada' }/
-    %meta{:name => 'description', :content => 'Get to know your MLA candidates for the upcoming 2011 Manitoba provincial election. Explore candidate related news, election information, and more.'}/
+    %meta{:name => 'keywords', :content => 'Manitoba election, Manitoba provincial election, Manitoba, provincial election, election, MLA, Member of Legislative Assembly, Premier, politics, government, democracy, Manitoba, Canada' }/
+    %meta{:name => 'description', :content => 'Get to know your MLA candidates for the upcoming Manitoba provincial election. Explore candidate related news, election information, and more.'}/
 
     %link{:href => "/favicon.ico?1", :rel => "shortcut icon", :type => "image/vnd.microsoft.icon"}/
     = stylesheet_link_tag "application"
@@ -26,7 +26,7 @@
     #container
       %header
         %h1
-          = link_to 'Manitoba Election 2011', '/'
+          = link_to 'Manitoba Election', '/'
         %h3
           A Citizen Created Election Resource
 
@@ -43,18 +43,17 @@
       
         - if show_title?
           %h2.title= yield(:title)
-
-        %div.flow_it
+          
+        - if show_highlighted_notice?
+          %div.flow_it
           %div.three_columns.notice
-            %p
-              %strong
-                Attention Voter! 
-              For election results please visit <a href="http://www.electionsmanitoba.ca/election/results/">Elections Manitoba</a> or one of <a href="http://manitobaelection.ca/pages/14/election-results-coverage">these fine news organizations</a>.
+            = yield(:highlighted_notice)
+
         = yield
 
       %footer
         %p
-          Manitoba Election 2011 - All content is public domain.
+          Manitoba Election - All content is public domain.
 
     = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js'
     %script

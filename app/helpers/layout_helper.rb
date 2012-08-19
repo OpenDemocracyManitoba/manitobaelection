@@ -16,6 +16,15 @@ module LayoutHelper
   def show_title?
     @show_title
   end
+  
+  def highlighted_notice(notice)
+    content_for(:highlighted_notice) { raw(notice) }
+    @show_highlighted_notice = true
+  end
+  
+  def show_highlighted_notice?
+    @show_highlighted_notice
+  end
 
   def breadcrumb(crumb, url)
     content_for(:current_crumbs) { h(" > ") + link_to(crumb.to_s, url) }
