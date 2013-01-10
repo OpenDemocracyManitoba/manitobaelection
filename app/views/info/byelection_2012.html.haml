@@ -4,33 +4,57 @@
 
 %div.flow_it
   %div.one_column.short_row
-    %h2 By-Election Countdown
-    %p
-      On <strong>Tuesday September 4 of 2012</strong> the people of <strong>Fort Whyte</strong> go to the polls to elect their next Member of the Legislative Assembly.
-      %br
-      %br
-    %p.election_countdown
-      - if @days_until_election == 0
-        The Election is Today!
-      - elsif @days_until_election > 0
-        #{pluralize(@days_until_election,'Day')} Until the By-Election
-      - else
-        The election has already occured.
+    %h2{ :style => 'margin-bottom: 8px;' }
+      Fort Whyte By-Election
+    %p.small
+      Unofficial
+      %strong 2012 By-Election Results.
+    %table{ :style => 'font-size: 0.8em;'}
+      %thead
+        %tr
+          %th Candidate Name
+          %th Party
+          %th Votes
+      %tbody
+        %tr
+          %td
+            %strong Pallister, Brian
+          %td
+            %strong PC
+          %td.numeric
+            %strong 3,626
+        %tr
+          %td Axworthy, Bob
+          %td Lib.
+          %td.numeric 2,074
+        %tr
+          %td Schmidt, Brandy
+          %td NDP
+          %td.numeric 739
+        %tr
+          %td Benham, Donnie  H. J.
+          %td GPM
+          %td.numeric 113
+        %tr
+          %td Ackman, Darrell
+          %td Ind.
+          %td.numeric 19
+    
   %div.one_column.short_row
     %h2 Voter Information
     %ul
-      %li= link_to 'Your role as a voter', '/pages/4/your-role-as-a-voter'
+      %li= link_to 'Your role as a voter', '/pages/15/your-role-as-a-voter-2012'
       %li= link_to 'Learn about elections in Manitoba', '/pages/10/voter-education'
       %li= link_to 'View the 2011 election results', 'http://www.elections.mb.ca/election/results/division.asp?ED=117'
       %li= link_to 'See our historic election maps', '/historic-maps'
     %br
     %p
       Learn more
-      = link_to 'about this site', 'http://dev.manitobaelection.ca/pages/1/about-us'
+      = link_to 'about this site', '/pages/1/about-us'
       or
       = link_to 'visit our 2011 election site.', election_2011_path
   %div.one_column
-    %h2 Fort Whyte
+    %h2 Fort Whyte 2012
     %img{ :src => '/images/maps/winnipeg/fort-whyte-by-election-2012.png', :style => 'margin-top: -20px; margin-left: 25px' }
     
       
@@ -51,7 +75,9 @@
     - if @latest_news_by_date.size == 0
       %p.grey No news articles found that mention candidates from this race.
     - else 
-      %p.grey.small Recent articles that mention candidates from this race.
+      %p.grey.small
+        Recent articles that mention candidates from this race.
+        = link_to 'Learn about this automated news feed.', '/pages/2/faq#news'
       %br
       = render 'news_articles/news_articles', :news_articles => @latest_news_by_date, :hide_source => true
       %br

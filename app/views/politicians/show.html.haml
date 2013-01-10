@@ -3,8 +3,6 @@
 - breadcrumb(@politician.constituency.name.downcase, @politician.constituency.friendly_path)
 - breadcrumb(@politician.name.downcase, request.fullpath)
 
-- highlighted_notice('<p><strong> This page was created for the 2011 Manitoba Election.</strong></p><p>Visit <a href="/">our homepage</a> to learn about the <a href="/">2012 Fort Whyte byelection</a> or view <a href="http://www.elections.mb.ca/election/results/flashresults.asp">the 2011 Manitoba Election results</a>.</p>')
-
 %div{ :class => @politician.questionnaire? ? 'one_column_flow' : 'flow_it'}
   %div.politicians
     = render :partial => @politician, :locals => { :hide_politician_link => true, :show_constituency => true, :show_incumbent_website => true, :hide_news_link => true, :hide_qanda_link => true }
@@ -12,6 +10,7 @@
     %h2 News that Mentions #{@politician.name}
     %p.article_notice
       Articles are gathered from #{ link_to 'Google News', 'http://news.google.ca' } by searching for the candidate's full name.
+      = link_to 'Learn about this automated news feed.', '/pages/2/faq#news'
     - if @mentions.size == 0
       %em No articles found yet.
     -else

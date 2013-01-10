@@ -12,8 +12,8 @@
         The Election is Today!
       - elsif @days_until_election > 0
         #{pluralize(@days_until_election,'Day')} Until the Election!
-      - else
-        The election has already occured.
+    %p
+      On <strong>September 4th of 2012</strong> there was a #{link_to 'by-election in the constituency of Fort Whyte', byelection_2012_path}.
     %br
     %h2 Voter Information
     %ul
@@ -24,7 +24,7 @@
       %li= link_to 'Meet the incumbent MLAs', '/candidates/incumbents'
 
   %div.one_column.medium_row
-    %h2 Meet the MLA Candidates
+    %h2 The 2011 MLA Candidates
     - @maps.each do |map|
       %div.mini_maps
         %div

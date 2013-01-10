@@ -33,7 +33,7 @@ class NewsArticlesController < ApplicationController
   end
 
   def moderate_approved
-    @approved_articles = NewsArticle.approved.with_mentions_and_politicians
+    @approved_articles = NewsArticle.approved.with_mentions_and_politicians.limit(500)
     @unmoderated_count = NewsArticle.unmoderated.size
     @rejected_count = NewsArticle.rejected.size
   end

@@ -33,6 +33,7 @@ Manitobaelection::Application.routes.draw do
     get 'page/:page', :action => :index, :on => :collection
   end
 
+  get 'constituencies/65/fort-whyte-2012-by-election' => redirect('/by-election-2012')
   get 'constituencies' => 'constituencies#index', :as => 'constituencies'
   get 'constituencies/:id/:slug' => 'constituencies#show', :as => 'constituency', :constraints => { :id => /[0-9]+/ } 
 
@@ -52,7 +53,7 @@ Manitobaelection::Application.routes.draw do
   get 'search' => 'info#search'
   get 'historic-maps' => 'info#historic'
   get 'election-2011' => "info#index", :as => 'election_2011'
-  get 'by-election-2012' => "info#byelection_2012"
+  get 'by-election-2012' => "info#byelection_2012", :as => "byelection_2012"
   
   root :to => "info#index"
 #  root :to => "info#byelection_2012"

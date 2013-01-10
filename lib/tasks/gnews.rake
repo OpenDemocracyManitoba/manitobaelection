@@ -35,11 +35,11 @@ namespace :gnews do
           # Auto approve articles that mention more than one candidate.
           # if current_article.moderation == 'new' && current_article.mentions.size > 1
           # Auto approve articles, unless they mention only mike brown.
-          if current_article.moderation == 'new' && (politician.name != 'Mike Brown' || current_article.mentions.size > 1)
-            current_article.moderation = 'approved'
-            current_article.save
-            auto_approved += 1
-          end
+          # if current_article.moderation == 'new' && (politician.name != 'Mike Brown' || current_article.mentions.size > 1) && politician.name != 'Darrell Ackman'
+          #   current_article.moderation = 'approved'
+          #   current_article.save
+          #   auto_approved += 1
+          # end
         end
       end
      # puts "  !! #{mention_count} New Mentions. !!" if mention_count != 0
@@ -52,11 +52,11 @@ namespace :gnews do
 
   def init_logger
     if defined?(Rails) 
-      if (Rails.env == 'development')
+      # if (Rails.env == 'development')
         Rails.logger = Logger.new(STDOUT)
-      else
-        Rails.logger.auto_flushing = true
-      end
+      #else
+      #  Rails.logger.auto_flushing = true
+      #end
     end
   end
     
