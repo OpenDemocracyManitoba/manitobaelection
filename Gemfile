@@ -17,6 +17,7 @@ gem 'feed-normalizer'
 gem 'rdiscount'
 gem 'kaminari'
 gem 'googl'
+gem 'json', '~> 1.7.7'
 
 group :development do
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
