@@ -5,19 +5,20 @@ gem 'rails', '3.0.19'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '~> 0.2.6'
+#gem 'mysql2', '~> 0.2.6'
+gem 'pg'
 gem 'haml'
 gem 'sass'
 gem 'nifty-generators', :group => :development
 gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git', :ref => '811f286fda3b6dfa91aa'
 gem 'paperclip'
 gem 'rails-backup-migrate'
-gem 'nokogiri'
+gem 'nokogiri', '~> 1.5.0'
 gem 'feed-normalizer'
 gem 'rdiscount'
 gem 'kaminari'
 gem 'googl'
-gem 'json', '~> 1.7.7'
+gem 'json', '~> 1.8.3'
 
 group :development do
   gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'

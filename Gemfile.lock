@@ -80,7 +80,7 @@ GEM
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
-    json (1.7.7)
+    json (1.8.3)
     kaminari (0.12.4)
       rails (>= 3.0.0)
     mail (2.2.19)
@@ -97,15 +97,15 @@ GEM
     mocha (0.9.12)
     multi_json (1.0.3)
     multi_xml (0.4.0)
-    mysql2 (0.2.11)
     nifty-generators (0.4.6)
-    nokogiri (1.5.0)
+    nokogiri (1.5.11)
     orm_adapter (0.0.5)
     paperclip (2.3.16)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
+    pg (0.18.4)
     polyglot (0.3.3)
     rack (1.2.6)
     rack-mount (0.6.14)
@@ -151,15 +151,18 @@ DEPENDENCIES
   feed-normalizer
   googl
   haml
-  json (~> 1.7.7)
+  json (~> 1.8.3)
   kaminari
   mocha
-  mysql2 (~> 0.2.6)
   nifty-generators
-  nokogiri
+  nokogiri (~> 1.5.0)
   paperclip
+  pg
   rails (= 3.0.19)
   rails-backup-migrate
   rails-dev-boost!
   rdiscount
   sass
+
+BUNDLED WITH
+   1.11.2
