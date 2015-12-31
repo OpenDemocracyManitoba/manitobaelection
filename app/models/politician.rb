@@ -4,7 +4,7 @@ class Politician < ActiveRecord::Base
   belongs_to :constituency
 
   has_many :mentions, :dependent => :destroy
-  has_many :news_articles, :through => :mentions, :conditions =>'news_articles.moderation = "approved"'
+  has_many :news_articles, :through => :mentions, :conditions =>"news_articles.moderation = 'approved'"
   
 
   attr_accessible :name, :incumbent_since, :website, :incumbent_website, :facebook, :twitter, :youtube, :office_address, :phone_number, :email, :image, :image_file_name, :constituency_id, :party_id, :party_leader, :questionnaire
