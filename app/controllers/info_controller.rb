@@ -1,7 +1,7 @@
 class InfoController < ApplicationController
-  
+
   caches_page :index, :historic, :search
-  
+
   def index
     @days_until_election = Date.parse("2011 October 4") - Date.today
     latest_news = NewsArticle.approved.with_mentions_and_politicians.limit(6)
@@ -11,11 +11,11 @@ class InfoController < ApplicationController
     @maps = Constituency::REGIONS.map { |name| maps_hash[name][0] }
     @parties = Party.all
   end
-  
+
   # view only
   def historic
   end
-  
+
   #view only
   def search
   end
@@ -24,11 +24,11 @@ class InfoController < ApplicationController
     @constituencies_by_region = Constituency.all_by_region
     @regions = Constituency::REGIONS
   end
-  
+
   def byelection_2012
     @days_until_election = Date.parse("2012 September 4") - Date.today
     @constituency = Constituency.with_politicians.find(65)
-    
+
     @latest_news_by_date = NewsArticle.approved.with_politicians(@constituency.politicians).limit(10).group_by(&:pretty_date)
   end
 end

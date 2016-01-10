@@ -6,22 +6,17 @@
   %div.one_column.medium_row
     %h2 Election Dates
     %p
-      On <strong>Tuesday October 4 of 2011</strong> the people of Manitoba went to the polls to elect their next Legislative Assembly. 
-    %p.election_countdown
-      - if @days_until_election == 0
-        The Election is Today!
-      - elsif @days_until_election > 0
-        #{pluralize(@days_until_election,'Day')} Until the Election!
+      On <strong>April 19 of 2016</strong> the people of Manitoba go to the polls to elect their next Legislative Assembly. 
     %p
-      On <strong>September 4th of 2012</strong> there was a #{link_to 'by-election in the constituency of Fort Whyte', byelection_2012_path}.
+      Our last provincial election was on <strong>October 4 of 2011</strong>. There was also a #{link_to 'by-election in the constituency of Fort Whyte', byelection_2012_path} on <strong>September 4 of 2012</strong>.
+
+    %br
     %br
     %h2 Voter Information
     %ul
       %li= link_to 'Your role as a voter', '/pages/4/your-role-as-a-voter'
       %li= link_to 'Learn about elections in Manitoba', '/pages/10/voter-education'
-      %li= link_to 'Research the election issues', '/issues'
       %li= link_to 'See our historic election maps', '/historic-maps'
-      %li= link_to 'Meet the incumbent MLAs', '/candidates/incumbents'
 
   %div.one_column.medium_row
     %h2 The 2011 MLA Candidates

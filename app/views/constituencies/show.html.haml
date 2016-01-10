@@ -2,8 +2,6 @@
 - breadcrumb('constituencies', constituencies_path)
 - breadcrumb(@constituency.name.downcase, request.fullpath)
 
-- highlighted_notice('<p><strong> This page was created for the 2011 Manitoba Election.</strong></p><p>Visit <a href="/">our homepage</a> to learn about the <a href="/">2012 Fort Whyte byelection</a> or view <a href="http://www.elections.mb.ca/election/results/flashresults.asp">the 2011 Manitoba Election results</a>.</p>')
-
 = render :partial => @constituency
 
 %div.flow_it
@@ -20,7 +18,7 @@
     %h2 Latest Candidate News
     - if @latest_news_by_date.size == 0
       %p.grey No news articles found that mention candidates from this race.
-    - else 
+    - else
       %p.grey.small Recent articles that mention candidates from this race.
       %br
       = render 'news_articles/news_articles', :news_articles => @latest_news_by_date, :hide_source => true
