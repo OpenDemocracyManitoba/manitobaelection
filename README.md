@@ -9,6 +9,12 @@ The website is powered by:
 * Apache with Phushion Passenger
 * Google News
 
+Database backup exported after the 2014 Winnipeg election:
+
+* [Postgres SQL Export - Manitoba Election 2011 / 2012](https://github.com/OpenDemocracyManitoba/manitobaelection/blob/master/public/data/ME_Postgres_Database_Dump.sql)
+* [Postgres Custom Binary Export - Manitoba Election 2011 / 2012](https://github.com/OpenDemocracyManitoba/manitobaelection/blob/master/public/data/ME_Postgres_Database_Dump.sqlc)
+
+
 ## License
 
 This is free and unencumbered software released into the public domain.  See LICENSE for details.
