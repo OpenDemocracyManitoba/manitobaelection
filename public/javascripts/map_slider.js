@@ -23,7 +23,7 @@ function showLegend(year) {
 
 $(document).ready(function() {
     var image_path = '/images/historic_maps/';
-    var election_years = [2007, 2003, 1999, 1995, 1990, 1988, 1986, 1981, 1977, 1973, 1969, 1966, 1962, 1959, 1958]
+    var election_years = [2011, 2007, 2003, 1999, 1995, 1990, 1988, 1986, 1981, 1977, 1973, 1969, 1966, 1962, 1959, 1958]
     var images = {}
     var legends = {}
 
