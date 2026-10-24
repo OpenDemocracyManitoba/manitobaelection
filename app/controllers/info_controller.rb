@@ -1,6 +1,6 @@
 class InfoController < ApplicationController
 
-  caches_page :index, :historic, :search
+  caches_page :index, :historic, :search, :byelection_2012
 
   def index
     @days_until_election = Date.parse("2011 October 4") - Date.today
